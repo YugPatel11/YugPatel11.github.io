@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yug Rojivadiya | Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- DESIGN SYSTEM --- */
+        :root {
+            --bg-page: #F8FAFC;
+            --bg-card: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --accent-primary: #2563EB;
+            --accent-light: #EFF6FF;
+            --border: #E2E8F0;
+            --radius: 24px;
+            --container-width: 1100px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- HEADER & HERO --- */
+        header {
+            padding: 80px 0 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .profile-wrapper {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+            margin-bottom: 30px;
+            background: #e2e8f0;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .profile-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin-bottom: 40px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn-primary {
+            background-color: var(--text-main);
+            color: white;
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-primary);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: white;
+            border-color: var(--border);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            transform: translateY(-3px);
+            background: var(--bg-page);
+        }
+
+        /* --- STATS ROW --- */
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-main);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- GRID SYSTEM --- */
+        .grid-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            padding-bottom: 80px;
+        }
+
+        .bento-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+        }
+
+        .skill-category { margin-bottom: 20px; }
+        .skill-cat-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .tag {
+            padding: 8px 16px;
+            background: var(--bg-page);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .tag:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            background: white;
+        }
+
+        .edu-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 15px;
+        }
+        .edu-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .edu-date { font-size: 0.85rem; font-weight: 700; color: var(--text-muted); white-space: nowrap; }
+
+        .card-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
+
+        .section-header {
+            grid-column: 1 / -1;
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+        .section-header h2 { font-size: 2rem; font-weight: 800; }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--accent-light);
+            color: var(--accent-primary);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .exp-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-muted);
+        }
+        .exp-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-size: 1.5rem;
+            line-height: 1rem;
+            top: 5px;
+        }
+
+        .project-img-lg {
+            border-radius: 16px;
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #CBD5E1;
+            font-size: 4rem;
+            overflow: hidden;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: var(--text-main);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        .project-link:hover {
+            background: #334155;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+            color: white;
+        }
+
+        /* --- UPDATED HACKATHON STYLES --- */
+        .hackathon-gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 25px;
+        }
+        .hackathon-img {
+            border-radius: 12px;
+            overflow: hidden;
+            /* Removed fixed height so images don't crop */
+            background: #f1f5f9;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hackathon-img img {
+            width: 100%;
+            height: auto; /* Maintains aspect ratio fully */
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+        }
+
+        /* --- DESKTOP LAYOUT --- */
+        @media (min-width: 900px) {
+            header {
+                flex-direction: row;
+                text-align: left;
+                justify-content: space-between;
+                padding: 100px 0 80px;
+            }
+            .hero-content { max-width: 60%; order: 1; }
+            .profile-wrapper { order: 2; width: 300px; height: 300px; border-width: 8px; }
+            .hero-title { font-size: 4.5rem; }
+            .btn-group { justify-content: flex-start; width: auto; }
+            .btn { width: auto; }
+
+            .grid-wrapper { grid-template-columns: repeat(12, 1fr); gap: 30px; }
+
+            .card-about { grid-column: span 8; }
+            .card-stats-box { grid-column: span 4; background: var(--text-main); color: white; justify-content: center; }
+            .card-skills-full { grid-column: span 8; }
+            .card-services { grid-column: span 4; }
+            .card-leadership { grid-column: span 6; }
+            .card-freelance { grid-column: span 6; }
+
+            .card-project-main {
+                grid-column: span 12;
+                display: grid;
+                grid-template-columns: 1.2fr 1fr;
+                align-items: center;
+                gap: 50px;
+            }
+            .project-img-lg { margin-top: 0; height: 100%; min-height: 350px; order: 2; }
+
+            /* --- UPDATED: HACKATHON CARD RESPONSIVENESS --- */
+            .card-hackathon {
+                grid-column: span 12;
+                display: grid;
+                /* Adjusted ratio: Give images more space (1.2fr) vs Text (0.8fr) */
+                grid-template-columns: 0.8fr 1.2fr;
+                gap: 50px;
+                align-items: start; /* Align content to top */
+            }
+            .hackathon-gallery {
+                grid-template-columns: 1fr 1fr; /* Images side by side */
+                margin-top: 0;
+                height: auto;
+                gap: 20px;
+            }
+            .hackathon-img { 
+                height: auto; 
+                min-height: auto; 
+            }
+
+            /* Half Cards */
+            .card-half { grid-column: span 6; }
+
+            .card-social {
+                grid-column: span 12; 
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 40px;
+            }
+            .card-social .btn { width: auto !important; margin-bottom: 0 !important; min-width: 140px; }
+            .card-social p { margin-bottom: 0 !important; margin-right: auto; }
+            .card-social .card-title { margin-bottom: 0; margin-right: 20px; white-space: nowrap; }
+        }
+
+        /* --- MOBILE & TABLET RESPONSIVENESS (<900px) --- */
+@media (max-width: 899px) {
+    :root {
+        --radius: 16px; /* Tighter corners for mobile */
+    }
+
+    .container {
+        padding: 0 20px; /* Reduced side padding */
+    }
+
+    /* --- Compact Header --- */
+    header {
+        padding: 40px 0 30px;
+    }
+
+    .profile-wrapper {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+        border-width: 4px;
+    }
+
+    .status-pill {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem; /* Scaled down from 2.8rem */
+        margin-bottom: 15px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    /* --- Buttons & Stats --- */
+    .btn-group {
+        gap: 12px;
+    }
+
+    .btn {
+        width: 100%; /* Full width for better touch targets */
+        max-width: 100%; 
+        padding: 14px 20px;
+        font-size: 0.95rem;
+    }
+
+    .stats-container {
+        gap: 20px; /* Tighter gap */
+        margin-bottom: 40px;
+        justify-content: space-between;
+    }
+
+    .stat-item {
+        flex: 1 1 30%; /* 3-column look on mobile */
+    }
+
+    .stat-num {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    /* --- Grid System Tweaks --- */
+    .grid-wrapper {
+        gap: 20px; /* Reduced gap between cards */
+        padding-bottom: 40px;
+    }
+
+    .bento-card {
+        padding: 20px; /* Reduced internal padding */
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .section-header {
+        margin-top: 20px;
+    }
+
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+
+    /* --- Element Scaling --- */
+    .tag {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .edu-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .project-img-lg {
+        font-size: 3rem;
+        min-height: 200px; /* Prevents image from being too tall */
+    }
+
+    /* --- Hackathon Gallery (Keep 2-col look) --- */
+    .hackathon-gallery {
+        grid-template-columns: 1fr 1fr; /* Maintain grid look */
+        gap: 15px;
+    }
+
+    /* --- Social Section --- */
+    .card-social {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .card-social .card-title {
+        margin-bottom: 5px;
+        margin-right: 0;
+    }
+
+    .card-social .btn {
+        margin: 0 !important;
+        justify-content: center;
+    }
+}
+
+/* --- EXTRA SMALL SCREENS (<400px) --- */
+@media (max-width: 400px) {
+    .hero-title { font-size: 1.8rem; }
+    .stat-num { font-size: 1.25rem; }
+    .hackathon-gallery { grid-template-columns: 1fr; } /* Stack images on very small screens */
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <div class="hero-content" data-aos="fade-right">
+                <div class="status-pill"><span class="dot"></span> Open to Internships</div>
+                <h1 class="hero-title">Hi, I'm <span style="color: var(--accent-primary);">Yug Rojivadiya.</span></h1>
+                <h2 style="font-size: 1.5rem; font-weight: 500; color: var(--text-muted); margin-bottom: 25px;">
+                    Building digital experiences with Django & React.</h2>
+
+                <p class="hero-subtitle">
+                    I am a CSE(AI/ML) student at P P Savani University, Vice President of the EBC Club, and a Freelance
+                    Developer. I bridge the gap between complex backend logic and smooth user interfaces.
+                </p>
+
+                <div class="stats-container" style="justify-content: flex-start; margin-bottom: 40px;">
+                    <div class="stat-item">
+                        <span class="stat-num">5+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">1.5+</span>
+                        <span class="stat-label">Years Coding</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">Vice President</span>
+                        <span class="stat-label">EBC Club PPSU</span>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <a href="https://linkedin.com/in/yug-rojivadiya-115bb435a/" class="btn btn-primary">Hire Me</a>
+                    <a href="resume/YUG ROJIVADIYA  final cv.pdf" class="btn btn-outline" download><i
+                            class="fa-solid fa-download"></i> Resume</a>
+                </div>
+            </div>
+
+            <div class="profile-wrapper" data-aos="zoom-in" data-aos-duration="1200">
+                <img src="images/my photo.jpg" alt="Yug Rojivadiya">
+            </div>
+        </header>
+
+
+        <div class="grid-wrapper">
+
+            <div class="bento-card card-about" data-aos="fade-up">
+                <span class="badge"><i class="fa-solid fa-graduation-cap"></i> Education</span>
+                <h3 class="card-title">Academic Background</h3>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">
+                    I am currently in my 4th semester of B.Tech in CSE(AI/ML).
+                    I secured a CGPA of 7.91 in my first year.
+                    I focus more on practical skill development by building real projects
+                    and working with modern tools.
+                    I am always open to learning any new programming language,
+                    framework, or technology as required.
+                </p>
+                <div class="edu-item">
+                    <div style="flex:1;">
+                        <h4 style="font-weight: 700;">B.Tech CSE (AI/ML)</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">P P Savani University</p>
+                    </div>
+                    <div class="edu-date">2024 - 2028</div>
+                </div>
+            </div>
+
+            <div class="bento-card card-stats-box" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-code" style="font-size: 2.5rem; margin-bottom: 15px; color: #60A5FA;"></i>
+                <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Full Stack Dev</h3>
+                <p style="font-size: 0.9rem; opacity: 0.9;">
+                    I build complete web solutions from backend to frontend interactivity,
+                    using my programming knowledge along with AI tools to work faster
+                    and deliver efficient, high-quality results.
+                </p>
+            </div>
+
+            <div class="bento-card card-skills-full" data-aos="fade-up">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h3 class="card-title">My Tech Arsenal</h3>
+                    <i class="fa-solid fa-toolbox" style="color: var(--text-muted); font-size: 1.5rem;"></i>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-cat-title">Frontend & UI</div>
+                    <div class="skill-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">React basics</span>
+                        <span class="tag">Flutter Flow</span>
+                        <span class="tag">Responsive Design</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-cat-title">Backend & Database</div>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Django</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Firebase</span>
+                    </div>
+                </div>
+
+                <div class="skill-category" style="margin-bottom: 0;">
+                    <div class="skill-cat-title">Tools & Others</div>
+                    <div class="skill-tags">
+                        <span class="tag">GitHub</span>
+                        <span class="tag">VS Code</span>
+                        <span class="tag">Render</span>
+                        <span class="tag">Microsoft Excel</span>
+                        <span class="tag">Microsoft PowerPoint</span>
+                        <span class="tag">Microsoft Word</span>
+                        <span class="tag">Canva</span>
+                        <span class="tag">Leadership Quality</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-card card-services" data-aos="fade-up" data-aos-delay="100">
+                <span class="badge" style="background: #F0FDF4; color: #166534;"><i class="fa-solid fa-handshake"></i>
+                    Services</span>
+                <h3 class="card-title">What I Do</h3>
+
+                <ul class="exp-list" style="margin-top: 10px;">
+                    <li><strong>Web Development:</strong> Custom websites tailored to business needs.</li>
+                    <li><strong>Web Design :</strong> Design professional and responsive websites.</li>
+                    <li><strong>Consulting:</strong> Helping students and startups plan their tech stack.</li>
+                </ul>
+            </div>
+
+            <div class="section-header" data-aos="fade-up">
+                <h2>Experience & Projects</h2>
+            </div>
+
+            <div class="bento-card card-leadership" data-aos="fade-up">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                    <span class="badge" style="background:#FFF7ED; color:#C2410C;">Leadership</span>
+                    <i class="fa-solid fa-users-line" style="font-size: 1.5rem; color: #F97316;"></i>
+                </div>
+                <h3 class="card-title">Vice President</h3>
+                <p class="exp-org">EBC Club, PPSU</p>
+                <ul class="exp-list">
+                    <li>Led event coordination for major university tech fests.</li>
+                    <li>Managed a team of 50+ students.</li>
+                    <li>Coordinated between faculty and students for smooth operations.</li>
+                </ul>
+            </div>
+
+            <div class="bento-card card-freelance" data-aos="fade-up" data-aos-delay="100">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                    <span class="badge">Freelance</span>
+                    <i class="fa-solid fa-laptop-code" style="font-size: 1.5rem; color: var(--accent-primary);"></i>
+                </div>
+                <h3 class="card-title">Web Developer</h3>
+                <p class="exp-org">Client Based • Remote</p>
+                <ul class="exp-list">
+                    <li>Developed full-cycle websites (Design to Deployment).</li>
+                    <li>Built custom inventory tools for retail clients.</li>
+                    <li>Managed client timelines and deliverables effectively.</li>
+                </ul>
+            </div>
+
+            <div class="bento-card card-project-main" data-aos="fade-up">
+                <div>
+                    <span class="badge"><i class="fa-solid fa-award"></i> SSIP Project</span>
+
+                    <h3 style="font-size:2rem;font-weight:800;margin-bottom:15px;">
+                        Grantpilot
+                    </h3>
+
+                    <p style="color:var(--text-muted);margin-bottom:20px;">
+                        Grantpilot is an SSIP-supported project developed to manage and track
+                        student innovation and grant-related workflows. This project helped secure
+                        two Government SSIP grants worth ₹45,000.
+                    </p>
+
+                    <div class="skill-tags">
+                        <span class="tag">SSIP</span>
+                        <span class="tag">Django</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Govt Grant</span>
+                    </div>
+
+                    <a href="https://your-grantpilot-link.com" target="_blank" class="project-link">
+                        Visit Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+
+                <div class="project-img-lg">
+                    <img src="images/Grantpilot.jpg" style="width:80%;height:100%;object-fit:cover;">
+                </div>
+            </div>
+
+            <div class="bento-card card-hackathon" data-aos="fade-up">
+                <div>
+                    <span class="badge" style="background-color: #FEF2F2; color: #DC2626;"><i class="fa-solid fa-trophy"></i> Achievement</span>
+
+                    <h3 style="font-size:2rem;font-weight:800;margin-bottom:15px;">
+                        Indux 5.0 Hackathon
+                    </h3>
+
+                    <p style="color:var(--text-muted);margin-bottom:20px;">
+                        Secured a <strong>Top 10 position</strong> in the Indux 5.0 national-level hackathon
+                        organized at Vikrant University, Gwalior. Our team competed against top developers
+                        from across the country to solve complex problems under a tight deadline.
+                    </p>
+
+                    <div class="skill-tags">
+                        <span class="tag">National Level</span>
+                        <span class="tag">Problem Solving</span>
+                        <span class="tag">Teamwork</span>
+                        <span class="tag">Top 10</span>
+                    </div>
+                </div>
+
+                <div class="hackathon-gallery">
+                    <div class="hackathon-img">
+                        <img src="images/indux5.0 hackathon1.jpg" alt="Indux Hackathon Photo 1">
+                    </div>
+                    <div class="hackathon-img">
+                        <img src="images/indux5.0 hackathon2.png" alt="Indux Hackathon Photo 2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-card card-half" data-aos="fade-up">
+                    <span class="badge"><i class="fa-solid fa-award"></i> SSIP Project</span>
+                <h3 class="card-title" style="font-size:1.3rem;">GeoBus</h3>
+                <p style="color:var(--text-muted);font-size:0.9rem; margin-bottom: 15px;">
+                    GeoBus is a school bus tracking system that provides real-time GPS
+                    location updates for parents and schools.
+                </p>
+                
+                <div class="skill-tags">
+                    <span class="tag">React Native</span>
+                    <span class="tag">Firebase</span>
+                    <span class="tag">Maps API</span>
+                </div>
+                
+                <div style="margin-top: 20px; width: 60%; height: 60%; border-radius: 12px; overflow: hidden; background: #e2e8f0;">
+                     <img src="images/Geobus.jpg" alt="GeoBus App Interface" style="width:100%; height:100%; object-fit: cover;">
+                </div>
+            </div>
+
+            <div class="bento-card card-half" data-aos="fade-up" data-aos-delay="100">
+                 <div>
+                    <span class="badge" style="background-color: #f3e8ff; color: #7e22ce;"><i class="fa-solid fa-briefcase"></i> Freelance Client</span>
+
+                    <h3 style="font-size:2rem;font-weight:800;margin-bottom:15px;">
+                        La Nevi Camp Website
+                    </h3>
+
+                    <p style="color:var(--text-muted);margin-bottom:20px;">
+                        Designed and developed a fully responsive website for a camping client.
+                        The platform showcases their services, activities, and booking-related information,
+                        ensuring a smooth user experience for potential customers.
+                    </p>
+
+                    <div class="skill-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Responsive Design</span>
+                    </div>
+
+                    <a href="https://your-lanevicamp-link.com" target="_blank" class="project-link">
+                        Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bento-card card-social" data-aos="fade-up" data-aos-delay="200">
+                <div>
+                    <h3 class="card-title">Connect</h3>
+                    <p style="color: var(--text-muted);">Find me on socials.</p>
+                </div>
+                
+                <div style="display: flex; gap: 15px; width: auto; flex-wrap: wrap;">
+                    <a href="https://linkedin.com/in/yug-rojivadiya-115bb435a/" target="_blank" class="btn btn-outline">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://www.instagram.com/yug.rojivadiya/" target="_blank" class="btn btn-outline">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=work.yugrojivadiya@gmail.com&su=Portfolio%20Inquiry&body=Hello%20Yug,%0A%0AI%20saw%20your%20portfolio."
+   target="_blank"
+   class="btn btn-outline">
+   <i class="fa-solid fa-envelope"></i> Email
+</a>
+
+                    <a href="https://wa.me/+919106577265" target="_blank" class="btn btn-outline">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <footer>
+            <p>&copy; 2024 Yug Rojivadiya. Crafted with Code & Creativity.</p>
+        </footer>
+
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: false, duration: 800, offset: 50 });
+    </script>
+</body>
+
+</html>
