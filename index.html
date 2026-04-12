@@ -345,7 +345,6 @@
             color: white;
         }
 
-        /* --- UPDATED HACKATHON STYLES --- */
         .hackathon-gallery {
             display: grid;
             grid-template-columns: 1fr;
@@ -355,7 +354,6 @@
         .hackathon-img {
             border-radius: 12px;
             overflow: hidden;
-            /* Removed fixed height so images don't crop */
             background: #f1f5f9;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             display: flex;
@@ -364,7 +362,7 @@
         }
         .hackathon-img img {
             width: 100%;
-            height: auto; /* Maintains aspect ratio fully */
+            height: auto; 
             display: block;
         }
 
@@ -408,17 +406,15 @@
             }
             .project-img-lg { margin-top: 0; height: 100%; min-height: 350px; order: 2; }
 
-            /* --- UPDATED: HACKATHON CARD RESPONSIVENESS --- */
             .card-hackathon {
                 grid-column: span 12;
                 display: grid;
-                /* Adjusted ratio: Give images more space (1.2fr) vs Text (0.8fr) */
                 grid-template-columns: 0.8fr 1.2fr;
                 gap: 50px;
-                align-items: start; /* Align content to top */
+                align-items: start;
             }
             .hackathon-gallery {
-                grid-template-columns: 1fr 1fr; /* Images side by side */
+                grid-template-columns: 1fr 1fr; 
                 margin-top: 0;
                 height: auto;
                 gap: 20px;
@@ -428,8 +424,8 @@
                 min-height: auto; 
             }
 
-            /* Half Cards */
             .card-half { grid-column: span 6; }
+            .card-full-mini { grid-column: span 12; }
 
             .card-social {
                 grid-column: span 12; 
@@ -447,14 +443,13 @@
         /* --- MOBILE & TABLET RESPONSIVENESS (<900px) --- */
 @media (max-width: 899px) {
     :root {
-        --radius: 16px; /* Tighter corners for mobile */
+        --radius: 16px; 
     }
 
     .container {
-        padding: 0 20px; /* Reduced side padding */
+        padding: 0 20px; 
     }
 
-    /* --- Compact Header --- */
     header {
         padding: 40px 0 30px;
     }
@@ -473,7 +468,7 @@
     }
 
     .hero-title {
-        font-size: 2.2rem; /* Scaled down from 2.8rem */
+        font-size: 2.2rem; 
         margin-bottom: 15px;
     }
 
@@ -483,26 +478,25 @@
         margin-bottom: 30px;
     }
 
-    /* --- Buttons & Stats --- */
     .btn-group {
         gap: 12px;
     }
 
     .btn {
-        width: 100%; /* Full width for better touch targets */
+        width: 100%; 
         max-width: 100%; 
         padding: 14px 20px;
         font-size: 0.95rem;
     }
 
     .stats-container {
-        gap: 20px; /* Tighter gap */
+        gap: 20px; 
         margin-bottom: 40px;
         justify-content: space-between;
     }
 
     .stat-item {
-        flex: 1 1 30%; /* 3-column look on mobile */
+        flex: 1 1 30%; 
     }
 
     .stat-num {
@@ -513,14 +507,13 @@
         font-size: 0.75rem;
     }
 
-    /* --- Grid System Tweaks --- */
     .grid-wrapper {
-        gap: 20px; /* Reduced gap between cards */
+        gap: 20px; 
         padding-bottom: 40px;
     }
 
     .bento-card {
-        padding: 20px; /* Reduced internal padding */
+        padding: 20px; 
     }
 
     .card-title {
@@ -535,7 +528,6 @@
         font-size: 1.75rem;
     }
 
-    /* --- Element Scaling --- */
     .tag {
         padding: 6px 12px;
         font-size: 0.8rem;
@@ -548,16 +540,14 @@
 
     .project-img-lg {
         font-size: 3rem;
-        min-height: 200px; /* Prevents image from being too tall */
+        min-height: 200px; 
     }
 
-    /* --- Hackathon Gallery (Keep 2-col look) --- */
     .hackathon-gallery {
-        grid-template-columns: 1fr 1fr; /* Maintain grid look */
+        grid-template-columns: 1fr 1fr; 
         gap: 15px;
     }
 
-    /* --- Social Section --- */
     .card-social {
         flex-direction: column;
         align-items: stretch;
@@ -580,7 +570,7 @@
 @media (max-width: 400px) {
     .hero-title { font-size: 1.8rem; }
     .stat-num { font-size: 1.25rem; }
-    .hackathon-gallery { grid-template-columns: 1fr; } /* Stack images on very small screens */
+    .hackathon-gallery { grid-template-columns: 1fr; } 
 }
     </style>
 </head>
@@ -628,7 +618,6 @@
             </div>
         </header>
 
-
         <div class="grid-wrapper">
 
             <div class="bento-card card-about" data-aos="fade-up">
@@ -668,13 +657,13 @@
                 </div>
 
                 <div class="skill-category">
-                    <div class="skill-cat-title">Frontend & UI</div>
+                    <div class="skill-cat-title">Frontend & Design</div>
                     <div class="skill-tags">
                         <span class="tag">HTML</span>
                         <span class="tag">CSS</span>
-                        <span class="tag">React basics</span>
-                        <span class="tag">Flutter Flow</span>
-                        <span class="tag">Responsive Design</span>
+                        <span class="tag">Tailwind</span>
+                        <span class="tag">Figma</span>
+                        <span class="tag">FlutterFlow</span>
                     </div>
                 </div>
 
@@ -683,22 +672,36 @@
                     <div class="skill-tags">
                         <span class="tag">Python</span>
                         <span class="tag">Django</span>
+                        <span class="tag">C</span>
                         <span class="tag">SQL</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">NeonDB</span>
                         <span class="tag">Firebase</span>
                     </div>
                 </div>
 
-                <div class="skill-category" style="margin-bottom: 0;">
-                    <div class="skill-cat-title">Tools & Others</div>
+                <div class="skill-category">
+                    <div class="skill-cat-title">Cloud & Deployment</div>
                     <div class="skill-tags">
-                        <span class="tag">GitHub</span>
-                        <span class="tag">VS Code</span>
                         <span class="tag">Render</span>
-                        <span class="tag">Microsoft Excel</span>
-                        <span class="tag">Microsoft PowerPoint</span>
-                        <span class="tag">Microsoft Word</span>
-                        <span class="tag">Canva</span>
-                        <span class="tag">Leadership Quality</span>
+                        <span class="tag">Vercel</span>
+                        <span class="tag">Cloudinary</span>
+                        <span class="tag">Stitch</span>
+                    </div>
+                </div>
+
+                <div class="skill-category" style="margin-bottom: 0;">
+                    <div class="skill-cat-title">AI, Data & Misc Tools</div>
+                    <div class="skill-tags">
+                        <span class="tag">ChatGPT</span>
+                        <span class="tag">Gemini</span>
+                        <span class="tag">Claude</span>
+                        <span class="tag">NumPy</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Antigravity</span>
+                        <span class="tag">Excel</span>
+                        <span class="tag">Word</span>
+                        <span class="tag">PPT</span>
                     </div>
                 </div>
             </div>
@@ -717,6 +720,38 @@
 
             <div class="section-header" data-aos="fade-up">
                 <h2>Experience & Projects</h2>
+            </div>
+
+            <div class="bento-card card-project-main" data-aos="fade-up">
+                <div>
+                    <span class="badge" style="background-color: #DBEAFE; color: #1D4ED8;"><i class="fa-solid fa-laptop-code"></i> Internship</span>
+                    <h3 style="font-size:2rem;font-weight:800;margin-bottom:15px;">Frontend Developer Intern</h3>
+                    <p class="exp-org" style="font-weight: bold; margin-bottom: 10px;">Edverb</p>
+                    <p style="color:var(--text-muted);margin-bottom:20px;">
+                        Completed a front-end development internship at Edverb, where I was responsible for building and structuring complete website frontends. During my time, I successfully developed two fully responsive live websites for their platforms.
+                    </p>
+
+                    <div class="skill-tags">
+                        <span class="tag">Frontend Development</span>
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">UI/UX</span>
+                    </div>
+
+                    <div style="display: flex; gap: 15px; margin-top: 25px; flex-wrap: wrap;">
+                        <a href="https://edverb.in/" target="_blank" class="project-link" style="margin-top: 0;">
+                            Edverb Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        <a href="https://blackbanana.in/" target="_blank" class="project-link" style="margin-top: 0; background: #000000;">
+                            Black Banana Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-img-lg" style="background: #f8fafc; flex-direction: column; padding: 20px;">
+                    <p style="font-size: 1rem; color: var(--text-muted); font-weight: 700; margin-bottom: 15px;">Internship Offer / Certificate</p>
+                    <img src="images/edverb-offer-latter.jpeg" alt="Edverb Offer Letter Placeholder" style="width:100%; height:auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                </div>
             </div>
 
             <div class="bento-card card-leadership" data-aos="fade-up">
@@ -778,6 +813,53 @@
                 </div>
             </div>
 
+            <div class="bento-card card-project-main" data-aos="fade-up">
+                <div>
+                    <span class="badge"><i class="fa-solid fa-award"></i> SSIP Project</span>
+
+                    <h3 style="font-size:2rem;font-weight:800;margin-bottom:15px;">
+                        Cricktraker
+                    </h3>
+
+                    <p style="color:var(--text-muted);margin-bottom:20px;">
+                        Cricktraker is an SSIP-supported application designed to be a comprehensive cricket scoring and tournament tracking platform, similar to Cricheroes. This innovative project successfully secured a Government SSIP grant worth ₹20,000.
+                    </p>
+
+                    <div class="skill-tags">
+                        <span class="tag">App Development</span>
+                        <span class="tag">Sports Tech</span>
+                        <span class="tag">Govt Grant</span>
+                        <span class="tag">Innovation</span>
+                    </div>
+                </div>
+
+                <div class="project-img-lg">
+                    <img src="images/cricktraker.jpeg" alt="Cricktraker App Interface Placeholder" style="width:80%;height:100%;object-fit:cover; border-radius: 12px; background: #e2e8f0;">
+                </div>
+            </div>
+
+            <div class="bento-card card-full-mini" data-aos="fade-up" style="display: flex; flex-direction: column; justify-content: center;">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <span class="badge" style="background-color: #FEF08A; color: #854D0E;"><i class="fa-solid fa-medal"></i> 1st Prize Winner</span>
+                        <h3 style="font-size:1.8rem; font-weight:800; margin-bottom:10px;">Website Building Competition</h3>
+                        <p class="exp-org" style="font-weight: 600; margin-bottom: 10px; color: var(--accent-primary);">P P Savani University</p>
+                        <p style="color:var(--text-muted); margin-bottom:15px;">
+                            Secured 1st position in the university-level website building competition by designing and developing a highly responsive and interactive web project under a strict time limit.
+                        </p>
+                        <div class="skill-tags">
+                            <span class="tag">1st Prize</span>
+                            <span class="tag">Web Design</span>
+                            <span class="tag">Time Management</span>
+                            <span class="tag">UI/UX</span>
+                        </div>
+                    </div>
+                    <div style="font-size: 5rem; color: #FDE047; opacity: 0.8; padding: 20px;">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                </div>
+            </div>
+
             <div class="bento-card card-hackathon" data-aos="fade-up">
                 <div>
                     <span class="badge" style="background-color: #FEF2F2; color: #DC2626;"><i class="fa-solid fa-trophy"></i> Achievement</span>
@@ -790,7 +872,6 @@
                        Secured a <strong>Top 10 position out of 165 teams</strong> in the Indux 5.0 national-level hackathon
                        organized at Vikrant University, Gwalior. Our team competed against top developers
                        from across the country to solve complex problems under a tight deadline.
-
                     </p>
 
                     <div class="skill-tags">
@@ -812,7 +893,7 @@
             </div>
 
             <div class="bento-card card-half" data-aos="fade-up">
-                    <span class="badge"><i class="fa-solid fa-award"></i> SSIP Project</span>
+                <span class="badge"><i class="fa-solid fa-award"></i> SSIP Project</span>
                 <h3 class="card-title" style="font-size:1.3rem;">GeoBus</h3>
                 <p style="color:var(--text-muted);font-size:0.9rem; margin-bottom: 15px;">
              GeoBus is an SSIP-supported project developed to track school buses and provide
