@@ -67,29 +67,41 @@
         }
         .liquid-blob {
             position: absolute;
-            filter: blur(80px);
+            filter: blur(100px);
             border-radius: 50%;
-            background: linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(198,198,199,0.08) 100%);
+            background: linear-gradient(45deg, rgba(255,255,255,0.15) 0%, rgba(198,198,199,0.2) 100%);
             z-index: 0;
             animation: blob-spin 20s infinite alternate ease-in-out;
+            box-shadow: 0 0-100px rgba(255,255,255,0.05);
         }
-        .blob-2 { animation-duration: 25s; animation-direction: alternate-reverse; }
-        .blob-3 { animation-duration: 30s; }
+        .blob-2 { animation-duration: 25s; animation-direction: alternate-reverse; background: linear-gradient(-45deg, rgba(113, 113, 122, 0.2) 0%, rgba(255,255,255,0.1) 100%); }
+        .blob-3 { animation-duration: 30s; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(113, 113, 122, 0.15) 100%); }
         
+        /* Grainy Overlay */
+        .noise-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            opacity: 0.05;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
         .glass-pane {
             backdrop-filter: blur(24px) saturate(180%);
-            background: rgba(58, 57, 57, 0.1);
+            background: rgba(25, 25, 25, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             transform-style: preserve-3d;
         }
         .glass-pane:hover {
-            transform: scale(1.03) translateY(-8px);
-            background: rgba(80, 80, 80, 0.2);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 20px rgba(255,255,255,0.05);
+            transform: scale(1.02) translateY(-5px);
+            background: rgba(40, 40, 40, 0.5);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(255,255,255,0.05);
             border-color: rgba(255,255,255,0.2);
         }
         .text-glow {
-            text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
         }
         .magnetic-hover {
             transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -101,14 +113,15 @@
             100% { background-position: -200% center; }
         }
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
         }
         @keyframes blob-spin {
             0% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.1); }
+            50% { transform: rotate(180deg) scale(1.3); }
             100% { transform: rotate(360deg) scale(1); }
         }
+
         .name-animate {
             background: linear-gradient(90deg, #ffffff 0%, #71717a 50%, #ffffff 100%);
             background-size: 200% auto;
@@ -120,23 +133,113 @@
         .animate-float {
             animation: float 6s ease-in-out infinite;
         }
+        .preloader-hidden {
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: #090909;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: all 1s cubic-bezier(0.85, 0, 0.15, 1);
+        }
+        .preloader-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        .lottie-container {
+            width: clamp(250px, 60vw, 400px);
+            height: clamp(250px, 60vw, 400px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader-text {
+            font-family: 'Manrope';
+            font-size: 0.75rem;
+            letter-spacing: 0.5em;
+            color: #ffffff;
+            text-transform: uppercase;
+            opacity: 0.6;
+            animation: pulse-text 2s infinite ease-in-out;
+        }
+        @keyframes pulse-text {
+            0%, 100% { opacity: 0.3; transform: scale(0.98); }
+            50% { opacity: 0.8; transform: scale(1); }
+        }
+
+
+        #mobile-menu-container {
+            max-height: 0;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(-20px);
+            pointer-events: none;
+        }
+        #mobile-menu-container.open {
+            max-height: 500px;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-manrope selection:bg-primary selection:text-on-primary overflow-x-hidden">
 
-<header class="fixed top-0 left-0 right-0 z-50 flex justify-center w-full px-2 md:px-4 text-center">
-    <nav class="bg-zinc-950/60 backdrop-blur-xl text-zinc-100 font-notoSerif uppercase tracking-widest text-[8px] md:text-sm rounded-full mt-4 md:mt-6 mx-auto w-fit max-w-[95vw] overflow-x-auto no-scrollbar px-3 md:px-8 py-2 md:py-3 flex items-center justify-between gap-3 md:gap-8 shadow-[0_0_40px_rgba(198,198,199,0.06)] border border-white/10 whitespace-nowrap">
-        <div class="text-[10px] md:text-2xl font-notoSerif font-bold italic mr-1 md:mr-4 name-animate cursor-default">
+<div id="preloader">
+    <div class="preloader-content">
+        <div class="lottie-container">
+            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+            <dotlottie-player src="images/preloader.lottie" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></dotlottie-player>
+
+        </div>
+        <div class="loader-text">Initializing Experience</div>
+    </div>
+</div>
+
+
+<header class="fixed top-0 left-0 right-0 z-50 flex flex-col items-center w-full pt-4 px-4">
+    <nav class="bg-zinc-950/60 backdrop-blur-xl text-zinc-100 font-notoSerif uppercase tracking-widest text-sm rounded-full mx-auto w-[92vw] md:w-fit px-6 md:px-8 py-3 flex items-center justify-between gap-4 md:gap-8 shadow-[0_0_40px_rgba(198,198,199,0.06)] border border-white/10 relative z-[60]">
+
+        <div class="text-sm md:text-2xl font-notoSerif font-bold italic name-animate cursor-default">
             Yug Rojivadiya
         </div>
-        <a class="text-white border-b-0 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-white magnetic-hover" href="#work">Work</a>
-        <a class="text-zinc-500 hover:text-zinc-200 transition-colors magnetic-hover" href="#experience">Experience</a>
-        <a class="text-zinc-500 hover:text-zinc-200 transition-colors magnetic-hover" href="#tech">Tech</a>
-        <a class="text-zinc-500 hover:text-zinc-200 transition-colors magnetic-hover" href="#contact">Contact</a>
-        <a href="resume/YUG ROJIVADIYA  final cv.pdf" download class="ml-auto md:ml-4 bg-primary text-on-primary px-3 md:px-6 py-1.5 md:py-2 rounded-full text-[8px] md:text-xs font-bold hover:scale-105 transition-transform duration-300 flex items-center gap-1 md:gap-2 flex-shrink-0">
-            <i class="fa-solid fa-download"></i> Resume
-        </a>
+        
+        <div class="hidden md:flex items-center gap-8">
+            <a class="text-white border-b-2 border-white magnetic-hover" href="#work">Work</a>
+            <a class="text-zinc-500 hover:text-zinc-200 transition-colors magnetic-hover" href="#experience">Experience</a>
+            <a class="text-zinc-500 hover:text-zinc-200 transition-colors magnetic-hover" href="#tech">Tech</a>
+            <a class="text-zinc-500 hover:text-zinc-200 transition-colors magnetic-hover" href="#contact">Contact</a>
+            <a href="resume/YUG ROJIVADIYA final cv.pdf" download class="bg-primary text-on-primary px-6 py-2 rounded-full text-xs font-bold hover:scale-105 transition-transform duration-300 flex items-center gap-2">
+                <i class="fa-solid fa-download"></i> Resume
+            </a>
+        </div>
+
+        <button id="menu-toggle" class="md:hidden text-white p-2 focus:outline-none">
+            <span class="material-symbols-outlined scale-125" id="menu-icon">menu</span>
+        </button>
     </nav>
+
+    <div id="mobile-menu-container" class="md:hidden w-full max-w-[92vw] mt-2 bg-zinc-950/90 backdrop-blur-2xl rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
+        <div class="flex flex-col p-6 gap-6 text-center font-notoSerif italic tracking-widest uppercase text-xs">
+            <a class="mobile-nav-link text-white py-2" href="#work">Work</a>
+            <a class="mobile-nav-link text-zinc-400 py-2" href="#experience">Experience</a>
+            <a class="mobile-nav-link text-zinc-400 py-2" href="#tech">Tech</a>
+            <a class="mobile-nav-link text-zinc-400 py-2" href="#contact">Contact</a>
+            <hr class="border-white/10">
+            <a href="resume/YUG ROJIVADIYA final cv.pdf" download class="bg-primary text-on-primary py-3 rounded-full font-bold flex items-center justify-center gap-2">
+                <i class="fa-solid fa-download"></i> Resume
+            </a>
+        </div>
+    </div>
 </header>
 
 <aside class="hidden xl:flex fixed left-8 top-1/2 -translate-y-1/2 flex-col gap-12 items-center z-40">
@@ -156,54 +259,71 @@
     </div>
 </aside>
 
+<div class="noise-overlay"></div>
+
 <div class="fixed inset-0 pointer-events-none z-0 liquid-mercury-bg">
-    <div class="liquid-blob w-[600px] h-[600px] top-[-10%] left-[-10%] opacity-40"></div>
-    <div class="liquid-blob blob-2 w-[500px] h-[500px] bottom-[-10%] right-[-5%] opacity-30"></div>
-    <div class="liquid-blob blob-3 w-[400px] h-[400px] top-[40%] right-[10%] opacity-20"></div>
+    <div class="liquid-blob w-[800px] h-[800px] top-[-20%] left-[-10%] opacity-60"></div>
+    <div class="liquid-blob blob-2 w-[700px] h-[700px] bottom-[-10%] right-[-10%] opacity-50"></div>
+    <div class="liquid-blob blob-3 w-[600px] h-[600px] top-[30%] right-[20%] opacity-40"></div>
 </div>
 
+
 <main class="relative z-10 w-full">
-    <section class="min-h-screen flex flex-col items-center justify-center px-4 md:px-6 pt-24 md:pt-32 text-center overflow-hidden">
-        <div class="max-w-6xl w-full flex flex-col items-center">
+    <section class="min-h-screen flex items-center justify-center px-4 md:px-12 pt-32 md:pt-0 overflow-hidden">
+        <div class="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             
-            <p class="font-manrope uppercase tracking-[0.4em] text-zinc-400 text-[6px] md:text-[10px] mb-4 md:mb-8" data-aos="fade-down" data-aos-duration="1200">Multidisciplinary Developer</p>
-            
-            <h1 class="font-notoSerif text-4xl md:text-7xl lg:text-9xl font-bold text-white tracking-tighter leading-tight italic text-glow whitespace-nowrap" data-aos="zoom-out-up" data-aos-duration="1500">
-                Yug Rojivadiya
-            </h1>
-            
-            <p class="max-w-2xl font-manrope text-zinc-400 text-[10px] md:text-lg mt-4 md:mt-8 font-light italic" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-                Builds digital experiences bridging backend logic and smooth UIs.
-            </p>
-            
-            <div class="mt-8 md:mt-12 flex flex-wrap justify-center gap-4" data-aos="zoom-in" data-aos-delay="500">
-                <div class="glass-pane px-4 md:px-8 py-2 md:py-3 rounded-full border border-outline-variant/10 flex items-center gap-2 md:gap-3">
-                    <div class="w-2 h-2 min-w-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_15px_rgba(34,197,94,1)]"></div>
-                    <span class="text-[8px] md:text-sm font-manrope font-light text-white">Open to internship and part time job</span>
+            <div class="flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1">
+                <p class="font-manrope uppercase tracking-[0.4em] text-zinc-400 text-[8px] md:text-xs mb-4 md:mb-6" data-aos="fade-right" data-aos-duration="1200">Multidisciplinary Developer</p>
+                
+                <h1 class="font-notoSerif text-[clamp(2.5rem,8vw,6rem)] md:text-7xl lg:text-8xl font-bold text-white tracking-tighter leading-[0.9] italic text-glow mb-6" data-aos="zoom-out-right" data-aos-duration="1500">
+                    Yug Rojivadiya
+                </h1>
+                
+                <p class="max-w-md font-manrope text-zinc-400 text-sm md:text-xl md:mt-4 font-light italic leading-relaxed" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
+                    Builds digital experiences bridging backend logic and smooth UIs.
+                </p>
+                
+                <div class="mt-8 md:mt-10 flex flex-wrap justify-center md:justify-start gap-4" data-aos="fade-right" data-aos-delay="500">
+                    <div class="glass-pane px-6 py-3 rounded-full border border-white/10 flex items-center gap-3">
+                        <div class="w-2 h-2 min-w-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_15px_rgba(34,197,94,1)]"></div>
+                        <span class="text-xs md:text-sm font-manrope font-light text-white">Open to Internship & Roles</span>
+                    </div>
+                </div>
+
+                <div class="mt-12 md:mt-16 grid grid-cols-3 gap-3 md:gap-6 w-full max-w-lg" data-aos="fade-up" data-aos-delay="700">
+                    <div class="glass-pane p-4 md:p-6 rounded-2xl border border-white/5">
+                        <span class="font-notoSerif text-xl md:text-4xl italic text-white block mb-1">5+</span>
+                        <span class="text-[8px] md:text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Projects</span>
+                    </div>
+                    <div class="glass-pane p-4 md:p-6 rounded-2xl border border-white/5">
+                        <span class="font-notoSerif text-xl md:text-4xl italic text-white block mb-1">1.5y+</span>
+                        <span class="text-[8px] md:text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Experience</span>
+                    </div>
+                    <div class="glass-pane p-4 md:p-6 rounded-2xl border border-white/5">
+                        <span class="font-notoSerif text-lg md:text-3xl italic text-white block mb-1">VP</span>
+                        <span class="text-[8px] md:text-[10px] uppercase tracking-widest text-zinc-500 font-bold">EBC Club</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="mt-10 md:mt-16 grid grid-cols-3 gap-2 md:gap-8 w-full max-w-4xl px-2 md:px-4" data-aos="fade-up" data-aos-delay="700">
-                <div class="glass-pane p-3 md:p-6 rounded-xl border border-outline-variant/5">
-                    <span class="font-notoSerif text-lg md:text-4xl italic text-white block mb-1">5+</span>
-                    <span class="text-[6px] md:text-[10px] uppercase tracking-widest text-zinc-500">Projects Completed</span>
+            <div class="relative flex justify-center items-center order-1 md:order-2" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="400">
+                <div class="relative w-64 h-80 md:w-80 md:h-[450px] group">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent rounded-[2rem] border border-white/20 z-0 transform translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-700"></div>
+                    
+                    <div class="relative z-10 w-full h-full overflow-hidden rounded-[2rem] border border-white/30 shadow-2xl transition-all duration-700 group-hover:scale-[1.02] group-hover:border-white/50">
+                         <img src="images/my photo.jpg" alt="Yug Rojivadiya" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-110">
+                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+                    </div>
+
+                    <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-white/5 backdrop-blur-3xl rounded-2xl border border-white/10 z-20 hidden md:flex items-center justify-center animate-float shadow-2xl">
+                        <span class="material-symbols-outlined text-white text-4xl opacity-50">terminal</span>
+                    </div>
                 </div>
-                <div class="glass-pane p-3 md:p-6 rounded-xl border border-outline-variant/5">
-                    <span class="font-notoSerif text-lg md:text-4xl italic text-white block mb-1">1.5+y</span>
-                    <span class="text-[6px] md:text-[10px] uppercase tracking-widest text-zinc-500">Coding Experience</span>
-                </div>
-                <div class="glass-pane p-3 md:p-6 rounded-xl border border-outline-variant/5 flex flex-col justify-center">
-                    <span class="font-notoSerif text-sm md:text-2xl italic text-white block mb-1 md:mb-2">VP</span>
-                    <span class="text-[6px] md:text-[10px] uppercase tracking-widest text-zinc-500">EBC Club PPSU</span>
-                </div>
-            </div>
-            
-            <div class="mt-10 md:mt-12 animate-float" data-aos="fade-in" data-aos-delay="900" data-aos-duration="2000">
-                 <img src="images/my photo.jpg" alt="Yug Rojivadiya" class="w-20 h-20 md:w-40 md:h-40 rounded-full object-cover border-4 border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:scale-110 transition-transform duration-500">
             </div>
             
         </div>
     </section>
+
 
     <section class="py-16 md:py-32 px-4 md:px-6">
         <div class="max-w-6xl mx-auto" data-aos="fade-right" data-aos-duration="1200">
@@ -249,7 +369,7 @@
                 <div class="w-12 md:w-24 h-[1px] bg-outline-variant/30"></div>
             </div>
             
-            <div class="grid grid-cols-4 gap-2 md:gap-6">
+            <div class="grid grid-cols-4 gap-1.5 md:gap-6">
                 <div class="glass-pane p-3 md:p-8 rounded-xl border border-outline-variant/5 group" data-aos="flip-left" data-aos-delay="100">
                     <h4 class="font-notoSerif text-[10px] md:text-xl italic text-white mb-2 md:mb-6 border-b border-white/10 pb-1 md:pb-2 group-hover:border-white/30 transition-colors">Frontend</h4>
                     <div class="flex flex-wrap gap-1 md:gap-2">
@@ -380,7 +500,7 @@
                 <div class="w-12 md:w-24 h-[1px] bg-outline-variant/30"></div>
             </div>
             
-            <div class="grid grid-cols-2 gap-4 md:gap-12">
+            <div class="grid grid-cols-2 gap-3 md:gap-12">
                 <div class="group" data-aos="fade-up-right" data-aos-delay="100">
                     <div class="glass-pane rounded-xl md:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-video mb-3 md:mb-6 border border-white/5 relative bg-zinc-900 flex items-center justify-center p-2">
                         <img alt="Grantpilot" class="w-full h-full object-contain opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000" src="images/Grantpilot.jpg"/>
@@ -461,32 +581,32 @@
             <span class="material-symbols-outlined text-4xl md:text-6xl text-yellow-500 mb-4 md:mb-6 drop-shadow-[0_0_15px_rgba(234,179,8,0.5)] animate-float" data-icon="emoji_events">emoji_events</span>
             <h2 class="font-notoSerif text-3xl md:text-5xl italic text-white mb-10 md:mb-16">Peak Milestones</h2>
             
-            <div class="grid grid-cols-2 gap-4 md:gap-8 items-stretch">
+            <div class="grid grid-cols-2 gap-3 md:gap-8 items-stretch">
                  
-                 <div class="glass-pane p-4 md:p-12 rounded-xl md:rounded-[2rem] border border-outline-variant/10 w-full hover:scale-[1.02] transition-all text-left flex flex-col h-full justify-between relative overflow-hidden">
-                     <div class="relative z-10">
-                         <span class="text-yellow-500 text-[6px] md:text-[10px] font-bold tracking-widest uppercase bg-yellow-500/10 px-2 md:px-3 py-0.5 md:py-1 rounded-full border border-yellow-500/20 mb-2 md:mb-6 inline-block">1st Prize Winner</span>
-                         <h3 class="font-notoSerif text-sm md:text-4xl italic text-white mb-2 md:mb-4 mt-1 md:mt-2">Website Building Competition</h3>
-                         <p class="font-manrope text-[7px] md:text-sm font-light text-zinc-400 mb-4 md:mb-8 leading-relaxed max-w-md">Secured 1st position in the university-level website building competition by designing and developing a highly responsive and interactive web project under a strict time limit.</p>
+                 <div class="glass-pane p-3 md:p-12 rounded-xl md:rounded-[2rem] border border-outline-variant/10 w-full hover:scale-[1.02] transition-all text-left flex flex-col md:flex-row md:items-center h-full gap-3 md:gap-8 justify-between relative overflow-hidden">
+                     <div class="relative z-10 md:w-3/5">
+                         <span class="text-yellow-500 text-[5px] md:text-[10px] font-bold tracking-widest uppercase bg-yellow-500/10 px-1.5 md:px-3 py-0.5 md:py-1 rounded-full border border-yellow-500/20 mb-1.5 md:mb-6 inline-block">1st Prize Winner</span>
+                         <h3 class="font-notoSerif text-[10px] md:text-4xl italic text-white mb-1.5 md:mb-4 mt-0.5 md:mt-2">Website Building Competition</h3>
+                         <p class="font-manrope text-[6px] md:text-sm font-light text-zinc-400 mb-2.5 md:mb-8 leading-relaxed">Secured 1st position in the university-level website building competition by designing and developing a highly responsive and interactive web project under a strict time limit.</p>
                          
-                         <p class="font-manrope text-[6px] md:text-sm font-bold text-zinc-300 uppercase tracking-widest bg-white/5 w-fit px-2 md:px-4 py-1 md:py-2 rounded-md md:rounded-lg border border-white/10 mb-4 md:mb-8">P P Savani University</p>
+                         <p class="font-manrope text-[5px] md:text-sm font-bold text-zinc-300 uppercase tracking-widest bg-white/5 w-fit px-1.5 md:px-4 py-0.5 md:py-2 rounded-md md:rounded-lg border border-white/10 mb-2.5 md:mb-8">P P Savani University</p>
                      </div>
                      
-                     <div class="w-full mt-auto relative z-10 bg-black/20 p-2 rounded-md md:rounded-xl">
-                          <img src="images/website-competition.jpg" alt="Website Building Competition" class="w-full h-16 md:h-40 object-contain rounded-md md:rounded-xl grayscale hover:grayscale-0 transition-all duration-500 shadow-xl border border-white/10">
+                     <div class="w-full md:w-2/5 relative z-10 bg-black/20 p-1.5 rounded-md md:rounded-xl">
+                          <img src="images/website-competition.jpeg" alt="Website Building Competition" class="w-full h-20 md:h-40 object-contain rounded-md md:rounded-xl transition-all duration-500 shadow-xl border border-white/10">
                      </div>
                  </div>
                  
-                 <div class="glass-pane p-4 md:p-12 rounded-xl md:rounded-[2rem] border border-outline-variant/10 w-full hover:scale-[1.02] transition-all text-left flex flex-col h-full justify-between relative overflow-hidden">
+                 <div class="glass-pane p-3 md:p-12 rounded-xl md:rounded-[2rem] border border-outline-variant/10 w-full hover:scale-[1.02] transition-all text-left flex flex-col h-full justify-between relative overflow-hidden">
                      <div class="relative z-10">
-                         <span class="text-red-400 text-[6px] md:text-[10px] font-bold tracking-widest uppercase bg-red-400/10 px-2 md:px-3 py-0.5 md:py-1 rounded-full border border-red-400/20 mb-2 md:mb-6 inline-block">Top 10 Achievement</span>
-                         <h3 class="font-notoSerif text-sm md:text-4xl italic text-white mb-2 md:mb-4 mt-1 md:mt-2">Indux 5.0 National-level Hackathon</h3>
-                         <p class="font-manrope text-[7px] md:text-sm font-light text-zinc-400 mb-4 md:mb-8 leading-relaxed max-w-md">Secured a Top 10 position out of 165 teams, competing against top developers from across the country to solve complex problems under a tight deadline.</p>
+                         <span class="text-red-400 text-[5px] md:text-[10px] font-bold tracking-widest uppercase bg-red-400/10 px-1.5 md:px-3 py-0.5 md:py-1 rounded-full border border-red-400/20 mb-1.5 md:mb-6 inline-block">Top 10 Achievement</span>
+                         <h3 class="font-notoSerif text-[10px] md:text-4xl italic text-white mb-1.5 md:mb-4 mt-0.5 md:mt-2">Indux 5.0 National-level Hackathon</h3>
+                         <p class="font-manrope text-[6px] md:text-sm font-light text-zinc-400 mb-2.5 md:mb-8 leading-relaxed max-w-md">Secured a Top 10 position out of 165 teams, competing against top developers from across the country to solve complex problems under a tight deadline.</p>
                      </div>
                      
-                     <div class="grid grid-cols-2 gap-2 md:gap-4 mt-auto relative z-10 bg-black/20 p-2 rounded-md md:rounded-xl">
-                          <img src="images/indux5.0 hackathon1.jpg" class="w-full h-16 md:h-40 object-contain rounded-md md:rounded-xl transition-all duration-500 shadow-xl border border-white/10">
-                          <img src="images/indux5.0 hackathon2.png" class="w-full h-16 md:h-40 object-top object-contain rounded-md md:rounded-xl  transition-all duration-500 shadow-xl border border-white/10">
+                     <div class="grid grid-cols-2 gap-1.5 md:gap-4 mt-auto relative z-10 bg-black/20 p-1.5 rounded-md md:rounded-xl">
+                          <img src="images/indux5.0 hackathon1.jpg" class="w-full h-20 md:h-40 object-contain rounded-md md:rounded-xl transition-all duration-500 shadow-xl border border-white/10">
+                          <img src="images/indux5.0 hackathon2.png" class="w-full h-20 md:h-40 object-top object-contain rounded-md md:rounded-xl  transition-all duration-500 shadow-xl border border-white/10">
                      </div>
                  </div>
             </div>
@@ -552,13 +672,40 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // Smooth Entry Animations
-    AOS.init({ 
-        once: false, 
-        duration: 1000, 
-        offset: 30,
-        easing: 'ease-out-cubic'
+    // Preloader Toggle
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        setTimeout(() => {
+            preloader.classList.add('preloader-hidden');
+            document.body.style.overflow = 'auto';
+            AOS.init({ 
+                once: false, 
+                duration: 1000, 
+                offset: 30,
+                easing: 'ease-out-cubic'
+            });
+        }, 1500);
     });
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu-container');
+    const menuIcon = document.getElementById('menu-icon');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    menuToggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuIcon.textContent = isOpen ? 'close' : 'menu';
+    });
+
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            menuIcon.textContent = 'menu';
+        });
+    });
+
+    document.body.style.overflow = 'hidden';
 </script>
 
 </body>
