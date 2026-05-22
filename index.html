@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html class="dark scroll-smooth" lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Yug Rojivadiya | Portfolio</title>
-    <meta name="description" content="Yug Rojivadiya | Portfolio - Multidisciplinary Developer specializing in Django, Flutter, and Web Development. Explore my projects, experience, and technical arsenal."/>
-    <meta name="keywords" content="Yug Rojivadiya, web developer, Django developer, Flutter developer, portfolio, B.Tech CSE, AI/ML, Python developer, India"/>
-    <meta name="author" content="Yug Rojivadiya"/>
-    <meta name="robots" content="index, follow"/>
+    <meta name="description"
+        content="Yug Rojivadiya | Portfolio - Multidisciplinary Developer specializing in Django, Flutter, and Web Development. Explore my projects, experience, and technical arsenal." />
+    <meta name="keywords"
+        content="Yug Rojivadiya, web developer, Django developer, Flutter developer, portfolio, B.Tech CSE, AI/ML, Python developer, India" />
+    <meta name="author" content="Yug Rojivadiya" />
+    <meta name="robots" content="index, follow" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://yugpatel11.github.io/"/>
-    <meta property="og:title" content="Yug Rojivadiya | Portfolio"/>
-    <meta property="og:description" content="Multidisciplinary Developer building premium digital experiences. Specialist in Django, Flutter, and Responsive Web UIs."/>
-    <meta property="og:image" content="https://yugpatel11.github.io/images/my%20photo.jpg"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yugpatel11.github.io/" />
+    <meta property="og:title" content="Yug Rojivadiya | Portfolio" />
+    <meta property="og:description"
+        content="Multidisciplinary Developer building premium digital experiences. Specialist in Django, Flutter, and Responsive Web UIs." />
+    <meta property="og:image" content="https://yugpatel11.github.io/images/my%20photo.jpg" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image"/>
-    <meta property="twitter:url" content="https://yugpatel11.github.io/"/>
-    <meta property="twitter:title" content="Yug Rojivadiya | Portfolio"/>
-    <meta property="twitter:description" content="Multidisciplinary Developer building premium digital experiences. Specialist in Django, Flutter, and Responsive Web UIs."/>
-    <meta property="twitter:image" content="https://yugpatel11.github.io/images/my%20photo.jpg"/>
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://yugpatel11.github.io/" />
+    <meta property="twitter:title" content="Yug Rojivadiya | Portfolio" />
+    <meta property="twitter:description"
+        content="Multidisciplinary Developer building premium digital experiences. Specialist in Django, Flutter, and Responsive Web UIs." />
+    <meta property="twitter:image" content="https://yugpatel11.github.io/images/my%20photo.jpg" />
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -40,13 +45,16 @@
     }
     </script>
 
-    
+
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@200;300;400;500;700;800&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@200;300;400;500;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -73,24 +81,29 @@
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
             vertical-align: middle;
         }
+
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: #131313;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #353534;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #5d5f5f;
         }
-        
+
         /* Hide scrollbar for mobile navbar to prevent overflow clipping */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
+
         .no-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
@@ -101,18 +114,28 @@
             position: relative;
             overflow: hidden;
         }
+
         .liquid-blob {
             position: absolute;
             filter: blur(100px);
             border-radius: 50%;
-            background: linear-gradient(45deg, rgba(255,255,255,0.15) 0%, rgba(198,198,199,0.2) 100%);
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 0%, rgba(198, 198, 199, 0.2) 100%);
             z-index: 0;
             animation: blob-spin 20s infinite alternate ease-in-out;
-            box-shadow: 0 0-100px rgba(255,255,255,0.05);
+            box-shadow: 0 0-100px rgba(255, 255, 255, 0.05);
         }
-        .blob-2 { animation-duration: 25s; animation-direction: alternate-reverse; background: linear-gradient(-45deg, rgba(113, 113, 122, 0.2) 0%, rgba(255,255,255,0.1) 100%); }
-        .blob-3 { animation-duration: 30s; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(113, 113, 122, 0.15) 100%); }
-        
+
+        .blob-2 {
+            animation-duration: 25s;
+            animation-direction: alternate-reverse;
+            background: linear-gradient(-45deg, rgba(113, 113, 122, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+        }
+
+        .blob-3 {
+            animation-duration: 30s;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(113, 113, 122, 0.15) 100%);
+        }
+
         /* Grainy Overlay */
         .noise-overlay {
             position: fixed;
@@ -130,32 +153,57 @@
             transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             transform-style: preserve-3d;
         }
+
         .glass-pane:hover {
             transform: scale(1.02) translateY(-5px);
             background: rgba(40, 40, 40, 0.5);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(255,255,255,0.05);
-            border-color: rgba(255,255,255,0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
         }
+
         .text-glow {
             text-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
         }
+
         .magnetic-hover {
             transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
-        
+
         /* New Advanced Animations */
         @keyframes shine {
-            0% { background-position: 200% center; }
-            100% { background-position: -200% center; }
+            0% {
+                background-position: 200% center;
+            }
+
+            100% {
+                background-position: -200% center;
+            }
         }
+
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(1deg); }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(1deg);
+            }
         }
+
         @keyframes blob-spin {
-            0% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.3); }
-            100% { transform: rotate(360deg) scale(1); }
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(180deg) scale(1.3);
+            }
+
+            100% {
+                transform: rotate(360deg) scale(1);
+            }
         }
 
         .name-animate {
@@ -166,13 +214,16 @@
             background-clip: text;
             animation: shine 4s linear infinite;
         }
+
         .animate-float {
             animation: float 6s ease-in-out infinite;
         }
+
         .preloader-hidden {
             opacity: 0 !important;
             visibility: hidden !important;
         }
+
         #preloader {
             position: fixed;
             inset: 0;
@@ -184,12 +235,14 @@
             z-index: 9999;
             transition: all 1s cubic-bezier(0.85, 0, 0.15, 1);
         }
+
         .preloader-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 2rem;
         }
+
         .lottie-container {
             width: clamp(250px, 60vw, 400px);
             height: clamp(250px, 60vw, 400px);
@@ -207,9 +260,19 @@
             opacity: 0.6;
             animation: pulse-text 2s infinite ease-in-out;
         }
+
         @keyframes pulse-text {
-            0%, 100% { opacity: 0.3; transform: scale(0.98); }
-            50% { opacity: 0.8; transform: scale(1); }
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(0.98);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
         }
 
 
@@ -221,6 +284,7 @@
             pointer-events: none;
             backdrop-filter: blur(32px);
         }
+
         #mobile-menu-container.open {
             max-height: 600px;
             opacity: 1;
@@ -233,6 +297,7 @@
             position: relative;
             padding: 0.5rem 0;
         }
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -245,579 +310,804 @@
             transform: translateX(-50%);
             opacity: 0;
         }
-        .nav-link:hover::after, .nav-link.active::after {
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
             width: 100%;
             opacity: 1;
-            box-shadow: 0 0 10px rgba(255,255,255,0.5);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
         .premium-nav {
-            background: linear-gradient(135deg, rgba(20,20,20,0.8) 0%, rgba(10,10,10,0.9) 100%);
-            border: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255,255,255,0.05);
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.05);
         }
 
         /* Hamburger Animation */
-        #menu-toggle.active #bar1 { transform: rotate(45deg) translateY(4.5px); }
-        #menu-toggle.active #bar2 { opacity: 0; }
-        #menu-toggle.active #bar3 { transform: rotate(-45deg) translateY(-4.5px); }
+        #menu-toggle.active #bar1 {
+            transform: rotate(45deg) translateY(4.5px);
+        }
+
+        #menu-toggle.active #bar2 {
+            opacity: 0;
+        }
+
+        #menu-toggle.active #bar3 {
+            transform: rotate(-45deg) translateY(-4.5px);
+        }
 
 
 
 
-    html, body {
-        max-width: 100%;
-        overflow-x: hidden;
-        position: relative;
-    }
-</style>
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+    </style>
+
 <body class="bg-surface text-on-surface font-manrope selection:bg-primary selection:text-on-primary overflow-x-hidden">
 
 
-<div id="preloader">
-    <div class="preloader-content">
-        <div class="lottie-container">
-            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-            <dotlottie-player src="images/preloader.lottie" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></dotlottie-player>
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="lottie-container">
+                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                    type="module"></script>
+                <dotlottie-player src="images/preloader.lottie" background="transparent" speed="1"
+                    style="width: 100%; height: 100%;" loop autoplay></dotlottie-player>
 
-        </div>
-        <div class="loader-text">Initializing Experience</div>
-    </div>
-</div>
-
-
-<header class="fixed top-0 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center w-full pt-6 px-4 pointer-events-none">
-    <nav class="premium-nav backdrop-blur-2xl text-zinc-100 font-manrope uppercase tracking-[0.2em] text-[10px] rounded-full w-fit max-w-[95vw] px-6 md:px-10 py-3 flex items-center justify-between gap-20 md:gap-14 relative z-[60] transition-all duration-500 pointer-events-auto">
-
-
-
-
-        <div class="flex items-center text-xs md:text-xl font-notoSerif font-bold italic name-animate cursor-default">
-            Yug Rojivadiya
-        </div>
-        
-        <div class="hidden md:flex items-center gap-10">
-            <a class="nav-link text-zinc-400 hover:text-white transition-colors" href="#work">Work</a>
-            <a class="nav-link text-zinc-400 hover:text-white transition-colors" href="#experience">Experience</a>
-            <a class="nav-link text-zinc-400 hover:text-white transition-colors" href="#tech">Tech</a>
-            <a class="nav-link text-zinc-400 hover:text-white transition-colors" href="#contact">Contact</a>
-            <a href="resume/YUG ROJIVADIYA final cv.pdf" download class="ml-4 bg-white text-black px-6 py-2 rounded-full text-[10px] font-extrabold hover:bg-zinc-200 hover:scale-105 transition-all duration-300 flex items-center gap-2 shadow-xl">
-                <i class="fa-solid fa-download text-[8px]"></i> Resume
-            </a>
-        </div>
-
-        <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-1 focus:outline-none shrink-0">
-            <div class="w-5 h-[1.5px] bg-white transition-all duration-300" id="bar1"></div>
-            <div class="w-5 h-[1.5px] bg-white transition-all duration-300" id="bar2"></div>
-            <div class="w-5 h-[1.5px] bg-white transition-all duration-300" id="bar3"></div>
-        </button>
-    </nav>
-
-
-    <div id="mobile-menu-container" class="md:hidden w-full max-w-[90vw] mt-3 bg-black/80 backdrop-blur-3xl rounded-[2rem] border border-white/5 overflow-hidden shadow-3xl">
-        <div class="flex flex-col p-8 gap-8 text-center font-notoSerif italic tracking-[0.3em] uppercase text-[10px]">
-            <a class="mobile-nav-link text-white py-2" href="#work">Work</a>
-            <a class="mobile-nav-link text-zinc-500 py-2" href="#experience">Experience</a>
-            <a class="mobile-nav-link text-zinc-500 py-2" href="#tech">Tech</a>
-            <a class="mobile-nav-link text-zinc-500 py-2" href="#contact">Contact</a>
-            <div class="h-[1px] w-12 bg-white/10 mx-auto"></div>
-            <a href="resume/YUG ROJIVADIYA final cv.pdf" download class="bg-white text-black py-4 rounded-full font-black flex items-center justify-center gap-3">
-                <i class="fa-solid fa-download"></i> Resume
-            </a>
+            </div>
+            <div class="loader-text">Initializing Experience</div>
         </div>
     </div>
-</header>
+
+
+    <header
+        class="fixed top-0 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center w-full pt-6 px-4 pointer-events-none">
+        <nav
+            class="premium-nav backdrop-blur-2xl text-zinc-100 font-manrope uppercase tracking-[0.2em] text-[10px] rounded-full w-fit max-w-[95vw] px-6 md:px-10 py-3 flex items-center justify-between gap-20 md:gap-14 relative z-[60] transition-all duration-500 pointer-events-auto">
 
 
 
 
-<div class="noise-overlay"></div>
-
-<div class="fixed inset-0 pointer-events-none z-0 liquid-mercury-bg">
-    <div class="liquid-blob w-[800px] h-[800px] top-[-20%] left-[-10%] opacity-60"></div>
-    <div class="liquid-blob blob-2 w-[700px] h-[700px] bottom-[-10%] right-[-10%] opacity-50"></div>
-    <div class="liquid-blob blob-3 w-[600px] h-[600px] top-[30%] right-[20%] opacity-40"></div>
-</div>
-
-
-<main class="relative z-10 w-full overflow-x-hidden max-w-full">
-
-    <section class="min-h-screen flex items-center justify-center px-4 md:px-12 pt-48 md:pt-24 overflow-hidden">
-        <div class="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            
-            <div class="flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1">
-                <p class="font-manrope uppercase tracking-[0.4em] text-zinc-400 text-[8px] md:text-xs mt-20 md:mt-10 mb-4 md:mb-6" data-aos="fade-right" data-aos-duration="1200">Multidisciplinary Developer</p>
-                
-               <h1 class="font-notoSerif text-[clamp(2.5rem,8vw,6rem)] md:text-7xl lg:text-8xl font-bold text-white tracking-tighter leading-[1] lg:leading-[1.1] italic text-glow mb-6" data-aos="zoom-out-right" data-aos-duration="1500">
-    Yug Rojivadiya
-</h1>
-                
-                <p class="max-w-md font-manrope text-zinc-400 text-sm md:text-xl md:mt-4 font-light italic leading-relaxed" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
-                    Builds digital experiences bridging backend logic and smooth UIs.
-                </p>
-                
-                <div class="mt-8 md:mt-10 flex flex-wrap justify-center md:justify-start gap-4" data-aos="fade-right" data-aos-delay="500">
-                    <div class="glass-pane px-6 py-3 rounded-full border border-white/10 flex items-center gap-3">
-                        <div class="w-2 h-2 min-w-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_15px_rgba(34,197,94,1)]"></div>
-                        <span class="text-xs md:text-sm font-manrope font-light text-white">Open to Internship & part timeJobs</span>
-                    </div>
-                </div>
-
-                <div class="mt-12 md:mt-16 grid grid-cols-2 gap-4 md:gap-6 w-full max-w-2xl" data-aos="fade-up" data-aos-delay="700">
-                    <div class="glass-pane p-4 md:p-6 rounded-2xl border border-white/5">
-                        <span class="font-notoSerif text-xl md:text-4xl italic text-white block mb-1">₹65k</span>
-                        <span class="text-[8px] md:text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Government SSIP Grants</span>
-                    </div>
-                    <div class="glass-pane p-4 md:p-6 rounded-2xl border border-white/5">
-                        <span class="font-notoSerif text-xl md:text-4xl italic text-white block mb-1">2y+</span>
-                        <span class="text-[8px] md:text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Experience</span>
-                    </div>
-                    <div class="glass-pane p-6 md:p-8 rounded-2xl border border-white/5 col-span-2">
-                        <span class="font-notoSerif text-2xl md:text-5xl italic text-white block mb-2">Vice President</span>
-                        <span class="text-[10px] md:text-xs uppercase tracking-widest text-zinc-500 font-bold">EBC Club</span>
-                    </div>
-                </div>
+            <div
+                class="flex items-center text-xs md:text-xl font-notoSerif font-bold italic name-animate cursor-default">
+                Yug Rojivadiya
             </div>
 
-            <div class="relative flex justify-center items-center order-1 md:order-2" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="400">
-                <div class="relative w-52 h-64 md:w-80 md:h-[450px] group">
-
-                    <div class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent rounded-[2rem] border border-white/20 z-0 transform translate-x-4 translate-y-4 transition-transform duration-700"></div>
-                    
-                    <div class="relative z-10 w-full h-full overflow-hidden rounded-[2rem] border border-white/30 shadow-2xl transition-all duration-700">
-                         <img src="images/my photo.jpg" alt="Yug Rojivadiya - Portfolio Profile Photo" class="w-full h-full object-cover transition-all duration-1000" loading="lazy">
-                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
-                    </div>
-
-                    <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-white/5 backdrop-blur-3xl rounded-2xl border border-white/10 z-20 hidden md:flex items-center justify-center animate-float shadow-2xl">
-                        <span class="material-symbols-outlined text-white text-4xl opacity-50">terminal</span>
-                    </div>
-                </div>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="nav-link text-zinc-400 hover:text-white transition-colors" href="#work">Work</a>
+                <a class="nav-link text-zinc-400 hover:text-white transition-colors" href="#experience">Experience</a>
+                <a class="nav-link text-zinc-400 hover:text-white transition-colors" href="#tech">Tech</a>
+                <a class="nav-link text-zinc-400 hover:text-white transition-colors" href="#contact">Contact</a>
+                <a href="resume/YUG ROJIVADIYA  final cv.pdf" download
+                    class="ml-4 bg-white text-black px-6 py-2 rounded-full text-[10px] font-extrabold hover:bg-zinc-200 hover:scale-105 transition-all duration-300 flex items-center gap-2 shadow-xl">
+                    <i class="fa-solid fa-download text-[8px]"></i> Resume
+                </a>
             </div>
-            
+
+            <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-1 focus:outline-none shrink-0">
+                <div class="w-5 h-[1.5px] bg-white transition-all duration-300" id="bar1"></div>
+                <div class="w-5 h-[1.5px] bg-white transition-all duration-300" id="bar2"></div>
+                <div class="w-5 h-[1.5px] bg-white transition-all duration-300" id="bar3"></div>
+            </button>
+        </nav>
+
+
+        <div id="mobile-menu-container"
+            class="md:hidden w-full max-w-[90vw] mt-3 bg-black/80 backdrop-blur-3xl rounded-[2rem] border border-white/5 overflow-hidden shadow-3xl">
+            <div
+                class="flex flex-col p-8 gap-8 text-center font-notoSerif italic tracking-[0.3em] uppercase text-[10px]">
+                <a class="mobile-nav-link text-white py-2" href="#work">Work</a>
+                <a class="mobile-nav-link text-zinc-500 py-2" href="#experience">Experience</a>
+                <a class="mobile-nav-link text-zinc-500 py-2" href="#tech">Tech</a>
+                <a class="mobile-nav-link text-zinc-500 py-2" href="#contact">Contact</a>
+                <div class="h-[1px] w-12 bg-white/10 mx-auto"></div>
+                <a href="resume/YUG ROJIVADIYA final cv.pdf" download
+                    class="bg-white text-black py-4 rounded-full font-black flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-download"></i> Resume
+                </a>
+            </div>
         </div>
-    </section>
+    </header>
 
 
-    <section class="py-16 md:py-32 px-4 md:px-6">
-        <div class="max-w-6xl mx-auto" data-aos="fade-right" data-aos-duration="1200">
-            <div class="mb-8 md:mb-16 flex items-center gap-4">
-                <h2 class="font-notoSerif text-2xl md:text-5xl italic text-white mb-0">Academic Background</h2>
-                <div class="w-12 md:w-24 h-[1px] bg-outline-variant/30"></div>
-            </div>
-            
-            <div class="glass-pane p-4 md:p-12 rounded-xl border-l border-white/20 relative overflow-hidden group">
-                <div class="absolute top-0 right-0 p-4 md:p-8 opacity-20 group-hover:opacity-40 transition-opacity animate-float">
-                    <span class="material-symbols-outlined text-4xl md:text-8xl text-white" data-icon="account_balance">account_balance</span>
+
+
+    <div class="noise-overlay"></div>
+
+    <div class="fixed inset-0 pointer-events-none z-0 liquid-mercury-bg">
+        <div class="liquid-blob w-[800px] h-[800px] top-[-20%] left-[-10%] opacity-60"></div>
+        <div class="liquid-blob blob-2 w-[700px] h-[700px] bottom-[-10%] right-[-10%] opacity-50"></div>
+        <div class="liquid-blob blob-3 w-[600px] h-[600px] top-[30%] right-[20%] opacity-40"></div>
+    </div>
+
+
+    <main class="relative z-10 w-full overflow-x-hidden max-w-full">
+
+        <section class="min-h-screen flex items-center justify-center px-4 md:px-12 pt-48 md:pt-24 overflow-hidden">
+            <div class="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+                <div class="flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1">
+                    <p class="font-manrope uppercase tracking-[0.4em] text-zinc-400 text-[8px] md:text-xs mt-20 md:mt-10 mb-4 md:mb-6"
+                        data-aos="fade-right" data-aos-duration="1200">Multidisciplinary Developer</p>
+
+                    <h1 class="font-notoSerif text-[clamp(2.5rem,8vw,6rem)] md:text-7xl lg:text-8xl font-bold text-white tracking-tighter leading-[1] lg:leading-[1.1] italic text-glow mb-6"
+                        data-aos="zoom-out-right" data-aos-duration="1500">
+                        Yug Rojivadiya
+                    </h1>
+
+                    <p class="max-w-md font-manrope text-zinc-400 text-sm md:text-xl md:mt-4 font-light italic leading-relaxed"
+                        data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
+                        Builds digital experiences bridging backend logic and smooth UIs.
+                    </p>
+
+                    <div class="mt-8 md:mt-10 flex flex-wrap justify-center md:justify-start gap-4"
+                        data-aos="fade-right" data-aos-delay="500">
+                        <div class="glass-pane px-6 py-3 rounded-full border border-white/10 flex items-center gap-3">
+                            <div
+                                class="w-2 h-2 min-w-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_15px_rgba(34,197,94,1)]">
+                            </div>
+                            <span class="text-xs md:text-sm font-manrope font-light text-white">Open to Internship &
+                                part timeJobs</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 md:mt-16 grid grid-cols-2 gap-4 md:gap-6 w-full max-w-2xl" data-aos="fade-up"
+                        data-aos-delay="700">
+                        <div class="glass-pane p-4 md:p-6 rounded-2xl border border-white/5">
+                            <span class="font-notoSerif text-xl md:text-4xl italic text-white block mb-1">₹65k</span>
+                            <span
+                                class="text-[8px] md:text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Government
+                                SSIP Grants</span>
+                        </div>
+                        <div class="glass-pane p-4 md:p-6 rounded-2xl border border-white/5">
+                            <span class="font-notoSerif text-xl md:text-4xl italic text-white block mb-1">2y+</span>
+                            <span
+                                class="text-[8px] md:text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Experience</span>
+                        </div>
+                        <div class="glass-pane p-6 md:p-8 rounded-2xl border border-white/5 col-span-2">
+                            <span class="font-notoSerif text-2xl md:text-5xl italic text-white block mb-2">Vice
+                                President</span>
+                            <span class="text-[10px] md:text-xs uppercase tracking-widest text-zinc-500 font-bold">EBC
+                                Club</span>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="relative z-10 w-full flex flex-row items-center justify-between gap-4">
-                    <div class="w-2/3">
-                        <span class="text-[6px] md:text-[10px] uppercase tracking-widest text-zinc-500 mb-1 md:mb-2 block">P P Savani University</span>
-                        <h3 class="font-notoSerif text-base md:text-4xl text-white mb-2 md:mb-4 italic">B.Tech in CSE (AI/ML)</h3>
-                        
-                        <p class="font-manrope text-[8px] md:text-sm font-light text-zinc-400 max-w-2xl mb-4 md:mb-8 leading-relaxed">
-                            I focus more on practical skill development by building real projects and working with modern tools. I am always open to learning any new programming language, framework, or technology as required.
+
+                <div class="relative flex justify-center items-center order-1 md:order-2" data-aos="zoom-in"
+                    data-aos-duration="1500" data-aos-delay="400">
+                    <div class="relative w-52 h-64 md:w-80 md:h-[450px] group">
+
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent rounded-[2rem] border border-white/20 z-0 transform translate-x-4 translate-y-4 transition-transform duration-700">
+                        </div>
+
+                        <div
+                            class="relative z-10 w-full h-full overflow-hidden rounded-[2rem] border border-white/30 shadow-2xl transition-all duration-700">
+                            <img src="images/my photo.jpg" alt="Yug Rojivadiya - Portfolio Profile Photo"
+                                class="w-full h-full object-cover transition-all duration-1000" loading="lazy">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60">
+                            </div>
+                        </div>
+
+                        <div
+                            class="absolute -bottom-6 -right-6 w-24 h-24 bg-white/5 backdrop-blur-3xl rounded-2xl border border-white/10 z-20 hidden md:flex items-center justify-center animate-float shadow-2xl">
+                            <span class="material-symbols-outlined text-white text-4xl opacity-50">terminal</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="py-16 md:py-32 px-4 md:px-6">
+            <div class="max-w-6xl mx-auto" data-aos="fade-right" data-aos-duration="1200">
+                <div class="mb-8 md:mb-16 flex items-center gap-4">
+                    <h2 class="font-notoSerif text-2xl md:text-5xl italic text-white mb-0">Academic Background</h2>
+                    <div class="w-12 md:w-24 h-[1px] bg-outline-variant/30"></div>
+                </div>
+
+                <div class="glass-pane p-4 md:p-12 rounded-xl border-l border-white/20 relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 p-4 md:p-8 opacity-20 group-hover:opacity-40 transition-opacity animate-float">
+                        <span class="material-symbols-outlined text-4xl md:text-8xl text-white"
+                            data-icon="account_balance">account_balance</span>
+                    </div>
+
+                    <div class="relative z-10 w-full flex flex-row items-center justify-between gap-4">
+                        <div class="w-2/3">
+                            <span
+                                class="text-[6px] md:text-[10px] uppercase tracking-widest text-zinc-500 mb-1 md:mb-2 block">P
+                                P Savani University</span>
+                            <h3 class="font-notoSerif text-base md:text-4xl text-white mb-2 md:mb-4 italic">B.Tech in
+                                CSE (AI/ML)</h3>
+
+                            <p
+                                class="font-manrope text-[8px] md:text-sm font-light text-zinc-400 max-w-2xl mb-4 md:mb-8 leading-relaxed">
+                                I focus more on practical skill development by building real projects and working with
+                                modern tools. I am always open to learning any new programming language, framework, or
+                                technology as required.
+                            </p>
+                        </div>
+
+                        <div class="w-1/3 flex flex-col gap-2 md:gap-4 items-end text-right">
+                            <div
+                                class="flex items-center gap-1 md:gap-2 bg-white/5 border border-white/10 px-2 md:px-4 py-1 md:py-2 rounded-full w-fit">
+                                <span class="material-symbols-outlined text-[8px] md:text-sm"
+                                    data-icon="calendar_today">calendar_today</span>
+                                <span class="text-[6px] md:text-sm font-manrope font-light text-zinc-300">2024 - 2028 |
+                                    4th Sem</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-1 md:gap-2 bg-white/5 border border-white/10 px-2 md:px-4 py-1 md:py-2 rounded-full w-fit">
+                                <span class="material-symbols-outlined text-[8px] md:text-sm"
+                                    data-icon="grade">grade</span>
+                                <span class="text-[6px] md:text-sm font-manrope font-light text-zinc-300">7.91 CGPA (1st
+                                    Year)</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-1 md:gap-2 bg-white/5 border border-white/10 px-2 md:px-4 py-1 md:py-2 rounded-full w-fit">
+                                <span class="material-symbols-outlined text-[8px] md:text-sm"
+                                    data-icon="grade">grade</span>
+                                <span class="text-[6px] md:text-sm font-manrope font-light text-zinc-300">7.92 CGPA (2nd
+                                    Year)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-32 px-4 md:px-6" id="tech">
+            <div class="max-w-6xl mx-auto" data-aos="fade-left" data-aos-duration="1200">
+                <div class="mb-8 md:mb-16 flex flex-row-reverse items-center gap-4 justify-start">
+                    <h2 class="font-notoSerif text-2xl md:text-5xl italic text-white mb-0">Tech Arsenal</h2>
+                    <div class="w-12 md:w-24 h-[1px] bg-outline-variant/30"></div>
+                </div>
+
+                <div class="grid grid-cols-4 gap-1.5 md:gap-6">
+                    <div class="glass-pane p-3 md:p-8 rounded-xl border border-outline-variant/5 group"
+                        data-aos="flip-left" data-aos-delay="150">
+                        <h4
+                            class="font-notoSerif text-[10px] md:text-xl italic text-white mb-2 md:mb-6 border-b border-white/10 pb-1 md:pb-2 group-hover:border-white/30 transition-colors">
+                            Frontend</h4>
+                        <div class="flex flex-wrap gap-1 md:gap-2">
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">HTML/CSS</span>
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Tailwind</span>
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Figma</span>
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">FlutterFlow</span>
+                        </div>
+                    </div>
+                    <div class="glass-pane p-3 md:p-8 rounded-xl border border-outline-variant/5 md:mt-12 group"
+                        data-aos="flip-left" data-aos-delay="250">
+                        <h4
+                            class="font-notoSerif text-[10px] md:text-xl italic text-white mb-2 md:mb-6 border-b border-white/10 pb-1 md:pb-2 group-hover:border-white/30 transition-colors">
+                            Backend</h4>
+                        <div class="flex flex-wrap gap-1 md:gap-2">
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Python</span>
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Django</span>
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">SQL/Mongo</span>
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Firebase</span>
+                        </div>
+                    </div>
+                    <div class="glass-pane p-3 md:p-8 rounded-xl border border-outline-variant/5 md:mt-6 group"
+                        data-aos="flip-left" data-aos-delay="350">
+                        <h4
+                            class="font-notoSerif text-[10px] md:text-xl italic text-white mb-2 md:mb-6 border-b border-white/10 pb-1 md:pb-2 group-hover:border-white/30 transition-colors">
+                            Cloud</h4>
+                        <div class="flex flex-wrap gap-1 md:gap-2">
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Render</span>
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Vercel</span>
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Stitch</span>
+                        </div>
+                    </div>
+                    <div class="glass-pane p-3 md:p-8 rounded-xl border border-outline-variant/5 md:mt-20 group"
+                        data-aos="flip-left" data-aos-delay="450">
+                        <h4
+                            class="font-notoSerif text-[10px] md:text-xl italic text-white mb-2 md:mb-6 border-b border-white/10 pb-1 md:pb-2 group-hover:border-white/30 transition-colors">
+                            AI & Data</h4>
+                        <div class="flex flex-wrap gap-1 md:gap-2">
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Gemini/Claude</span>
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Antigravity</span>
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">NumPy</span>
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Pandas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 md:py-20 px-4 md:px-6 bg-surface-container-lowest/30 overflow-hidden" data-aos="fade-up">
+            <div class="max-w-6xl mx-auto flex flex-row justify-between items-center gap-4 md:gap-12">
+                <h2 class="font-notoSerif text-xl md:text-5xl italic text-white w-1/3">What I Do</h2>
+                <div class="flex flex-row justify-end gap-2 md:gap-8 w-2/3">
+                    <div class="flex items-center gap-1 md:gap-4 group cursor-default">
+                        <div
+                            class="w-6 h-6 md:w-12 md:h-12 flex-shrink-0 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
+                            <i
+                                class="fa-solid fa-code text-zinc-300 group-hover:text-black transition-colors text-[8px] md:text-base"></i>
+                        </div>
+                        <span class="font-manrope uppercase tracking-widest text-[5px] md:text-sm text-zinc-300">Web
+                            Dev</span>
+                    </div>
+                    <div class="flex items-center gap-1 md:gap-4 group cursor-default">
+                        <div
+                            class="w-6 h-6 md:w-12 md:h-12 flex-shrink-0 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
+                            <i
+                                class="fa-solid fa-palette text-zinc-300 group-hover:text-black transition-colors text-[8px] md:text-base"></i>
+                        </div>
+                        <span class="font-manrope uppercase tracking-widest text-[5px] md:text-sm text-zinc-300">Web
+                            Design</span>
+                    </div>
+                    <div class="flex items-center gap-1 md:gap-4 group cursor-default">
+                        <div
+                            class="w-6 h-6 md:w-12 md:h-12 flex-shrink-0 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
+                            <i
+                                class="fa-solid fa-lightbulb text-zinc-300 group-hover:text-black transition-colors text-[8px] md:text-base"></i>
+                        </div>
+                        <span
+                            class="font-manrope uppercase tracking-widest text-[5px] md:text-sm text-zinc-300">Consulting</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-32 px-4 md:px-6" id="experience">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-8 md:mb-16 flex items-center gap-4" data-aos="fade-up">
+                    <h2 class="font-notoSerif text-2xl md:text-5xl italic text-white mb-0">Professional Journey</h2>
+                    <div class="w-12 md:w-24 h-[1px] bg-outline-variant/30"></div>
+                </div>
+
+                <div class="flex flex-col gap-6 md:gap-10">
+                    <div class="glass-pane p-4 md:p-10 rounded-xl flex flex-row justify-between items-center gap-4 border-l border-white/20 hover:border-white/50 transition-colors group"
+                        data-aos="zoom-in-up" data-aos-delay="100">
+                        <div class="w-1/3">
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest text-zinc-500 bg-white/5 px-2 md:px-3 py-0.5 md:py-1 rounded-full border border-white/10 inline-block w-fit whitespace-nowrap">Frontend
+                                Intern</span>
+                            <h3
+                                class="font-notoSerif text-sm md:text-3xl text-white mt-2 md:mt-4 italic group-hover:scale-105 transition-transform origin-left">
+                                Edverb</h3>
+                        </div>
+                        <div class="w-2/3 text-right">
+                            <p
+                                class="font-manrope text-[7px] md:text-sm font-light text-zinc-400 mb-3 md:mb-6 leading-relaxed">
+                                Completed a front-end development internship at Edverb, where I was responsible for
+                                building and structuring complete website frontends. During my time, I successfully
+                                developed two fully responsive live websites for their platforms.
+                            </p>
+                            <div class="flex flex-row justify-end gap-2 md:gap-4">
+                                <a href="https://edverb.in/" target="_blank"
+                                    class="px-2 md:px-5 py-1 md:py-2.5 border border-white/10 rounded-full text-[5px] md:text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition flex items-center gap-1 md:gap-2">
+                                    Edverb <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                                <a href="https://blackbanana.in/" target="_blank"
+                                    class="px-2 md:px-5 py-1 md:py-2.5 border border-[#ffffff]/10 bg-black rounded-full text-[5px] md:text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition flex items-center gap-1 md:gap-2 shadow-lg">
+                                    Banana <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-pane p-4 md:p-10 rounded-xl flex flex-row justify-between items-center gap-4 border-l border-white/10 ml-2 md:ml-12 hover:border-white/50 transition-colors group"
+                        data-aos="zoom-in-up" data-aos-delay="200">
+                        <div class="w-1/3">
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest text-zinc-500 bg-white/5 px-2 md:px-3 py-0.5 md:py-1 rounded-full border border-white/10 inline-block w-fit whitespace-nowrap">Leadership</span>
+                            <h3
+                                class="font-notoSerif text-sm md:text-3xl text-white mt-2 md:mt-4 italic group-hover:scale-105 transition-transform origin-left">
+                                VP, EBC Club</h3>
+                        </div>
+                        <div class="w-2/3 text-right flex justify-end">
+                            <ul
+                                class="font-manrope text-[7px] md:text-sm font-light text-zinc-400 list-disc list-inside text-right flex flex-col gap-1 md:gap-2 leading-relaxed">
+                                <li>Led event coordination for major university tech fests.</li>
+                                <li>Managed a team of 50+ students.</li>
+                                <li>Coordinated between faculty and students for smooth operations.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="glass-pane p-4 md:p-10 rounded-xl flex flex-row justify-between items-center gap-4 border-l border-white/5 ml-4 md:ml-24 hover:border-white/50 transition-colors group"
+                        data-aos="zoom-in-up" data-aos-delay="300">
+                        <div class="w-1/3">
+                            <span
+                                class="text-[5px] md:text-[10px] uppercase tracking-widest text-zinc-500 bg-white/5 px-2 md:px-3 py-0.5 md:py-1 rounded-full border border-white/10 inline-block w-fit whitespace-nowrap">Client
+                                • Remote</span>
+                            <h3
+                                class="font-notoSerif text-sm md:text-3xl text-white mt-2 md:mt-4 italic group-hover:scale-105 transition-transform origin-left">
+                                Freelance Dev</h3>
+                        </div>
+                        <div class="w-2/3 text-right flex justify-end">
+                            <ul
+                                class="font-manrope text-[7px] md:text-sm font-light text-zinc-400 list-disc list-inside text-right flex flex-col gap-1 md:gap-2 leading-relaxed">
+                                <li>Developed end-to-end websites from design to deployment.</li>
+                                <li>Built real-world business and management web projects.</li>
+                                <li>Managed client requirements, timelines, and quality delivery.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-32 px-4 md:px-6" id="work">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-8 md:mb-16 flex flex-row-reverse items-center gap-4 justify-start" data-aos="fade-left">
+                    <h2 class="font-notoSerif text-2xl md:text-5xl italic text-white mb-0">Curated Projects & Grants
+                    </h2>
+                    <div class="w-12 md:w-24 h-[1px] bg-outline-variant/30"></div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 md:gap-12">
+                    <div class="group" data-aos="fade-up-right" data-aos-delay="150">
+                        <div
+                            class="glass-pane rounded-xl md:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-video mb-3 md:mb-6 border border-white/5 relative bg-zinc-900 flex items-center justify-center p-2">
+                            <img alt="Grantpilot - SSIP Grant Winning Project by Yug Rojivadiya"
+                                class="w-full h-full object-contain opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
+                                src="images/Grantpilot.jpg" loading="lazy" />
+                            <div class="absolute top-2 right-2 md:top-6 md:right-6">
+                                <span
+                                    class="bg-primary text-on-primary text-[5px] md:text-[10px] font-bold px-2 md:px-4 py-1 md:py-1.5 rounded-full uppercase tracking-widest shadow-lg">₹30,000
+                                    SSIP Grant</span>
+                            </div>
+                        </div>
+                        <h4 class="font-notoSerif text-base md:text-3xl text-white italic mb-1 md:mb-2">Grantpilot</h4>
+                        <p
+                            class="font-manrope text-[7px] md:text-sm text-zinc-400 font-light mb-2 md:mb-4 leading-relaxed">
+                            An SSIP-supported project developed to manage and track student innovation and grant-related
+                            workflows.
                         </p>
-                    </div>
-                    
-                    <div class="w-1/3 flex flex-col gap-2 md:gap-4 items-end text-right">
-                        <div class="flex items-center gap-1 md:gap-2 bg-white/5 border border-white/10 px-2 md:px-4 py-1 md:py-2 rounded-full w-fit">
-                            <span class="material-symbols-outlined text-[8px] md:text-sm" data-icon="calendar_today">calendar_today</span>
-                            <span class="text-[6px] md:text-sm font-manrope font-light text-zinc-300">2024 - 2028 | 4th Sem</span>
+                        <div class="flex gap-2 md:gap-4">
+                            <span
+                                class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Django</span>
+                            <span
+                                class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Python</span>
                         </div>
-                        <div class="flex items-center gap-1 md:gap-2 bg-white/5 border border-white/10 px-2 md:px-4 py-1 md:py-2 rounded-full w-fit">
-                            <span class="material-symbols-outlined text-[8px] md:text-sm" data-icon="grade">grade</span>
-                            <span class="text-[6px] md:text-sm font-manrope font-light text-zinc-300">7.91 CGPA (1st Year)</span>
+                        <a href="https://iec.ppsu.ac.in/" target="_blank"
+                            class="inline-flex mt-2 md:mt-6 items-center gap-1 md:gap-2 text-[5px] md:text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition group-hover:text-white">
+                            Visit Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+
+                    <div class="group md:mt-24" data-aos="fade-up-left" data-aos-delay="250">
+                        <div
+                            class="glass-pane rounded-xl md:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-video mb-3 md:mb-6 border border-white/5 relative bg-zinc-900 flex items-center justify-center p-2">
+                            <img alt="Cricktraker - Sports Scoring Platform by Yug Rojivadiya"
+                                class="w-full h-full object-contain opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
+                                src="images/cricktraker.jpeg" loading="lazy" />
+                            <div class="absolute top-2 right-2 md:top-6 md:right-6">
+                                <span
+                                    class="bg-primary text-on-primary text-[5px] md:text-[10px] font-bold px-2 md:px-4 py-1 md:py-1.5 rounded-full uppercase tracking-widest shadow-lg">₹20,000
+                                    SSIP Grant</span>
+                            </div>
                         </div>
-                        <div class="flex items-center gap-1 md:gap-2 bg-white/5 border border-white/10 px-2 md:px-4 py-1 md:py-2 rounded-full w-fit">
-                            <span class="material-symbols-outlined text-[8px] md:text-sm" data-icon="grade">grade</span>
-                            <span class="text-[6px] md:text-sm font-manrope font-light text-zinc-300">7.92 CGPA (2nd Year)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 md:py-32 px-4 md:px-6" id="tech">
-        <div class="max-w-6xl mx-auto" data-aos="fade-left" data-aos-duration="1200">
-            <div class="mb-8 md:mb-16 flex flex-row-reverse items-center gap-4 justify-start">
-                <h2 class="font-notoSerif text-2xl md:text-5xl italic text-white mb-0">Tech Arsenal</h2>
-                <div class="w-12 md:w-24 h-[1px] bg-outline-variant/30"></div>
-            </div>
-            
-            <div class="grid grid-cols-4 gap-1.5 md:gap-6">
-                <div class="glass-pane p-3 md:p-8 rounded-xl border border-outline-variant/5 group" data-aos="flip-left" data-aos-delay="150">
-                    <h4 class="font-notoSerif text-[10px] md:text-xl italic text-white mb-2 md:mb-6 border-b border-white/10 pb-1 md:pb-2 group-hover:border-white/30 transition-colors">Frontend</h4>
-                    <div class="flex flex-wrap gap-1 md:gap-2">
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">HTML/CSS</span>
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Tailwind</span>
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Figma</span>
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">FlutterFlow</span>
-                    </div>
-                </div>
-                <div class="glass-pane p-3 md:p-8 rounded-xl border border-outline-variant/5 md:mt-12 group" data-aos="flip-left" data-aos-delay="250">
-                    <h4 class="font-notoSerif text-[10px] md:text-xl italic text-white mb-2 md:mb-6 border-b border-white/10 pb-1 md:pb-2 group-hover:border-white/30 transition-colors">Backend</h4>
-                    <div class="flex flex-wrap gap-1 md:gap-2">
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Python</span>
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Django</span>
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">SQL/Mongo</span>
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Firebase</span>
-                    </div>
-                </div>
-                <div class="glass-pane p-3 md:p-8 rounded-xl border border-outline-variant/5 md:mt-6 group" data-aos="flip-left" data-aos-delay="350">
-                    <h4 class="font-notoSerif text-[10px] md:text-xl italic text-white mb-2 md:mb-6 border-b border-white/10 pb-1 md:pb-2 group-hover:border-white/30 transition-colors">Cloud</h4>
-                    <div class="flex flex-wrap gap-1 md:gap-2">
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Render</span>
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Vercel</span>
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Stitch</span>
-                    </div>
-                </div>
-                <div class="glass-pane p-3 md:p-8 rounded-xl border border-outline-variant/5 md:mt-20 group" data-aos="flip-left" data-aos-delay="450">
-                    <h4 class="font-notoSerif text-[10px] md:text-xl italic text-white mb-2 md:mb-6 border-b border-white/10 pb-1 md:pb-2 group-hover:border-white/30 transition-colors">AI & Data</h4>
-                    <div class="flex flex-wrap gap-1 md:gap-2">
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Gemini/Claude</span>
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Antigravity</span>
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">NumPy</span>
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest px-1.5 md:px-3 py-0.5 md:py-1 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition cursor-default">Pandas</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-12 md:py-20 px-4 md:px-6 bg-surface-container-lowest/30 overflow-hidden" data-aos="fade-up">
-        <div class="max-w-6xl mx-auto flex flex-row justify-between items-center gap-4 md:gap-12">
-            <h2 class="font-notoSerif text-xl md:text-5xl italic text-white w-1/3">What I Do</h2>
-            <div class="flex flex-row justify-end gap-2 md:gap-8 w-2/3">
-                <div class="flex items-center gap-1 md:gap-4 group cursor-default">
-                    <div class="w-6 h-6 md:w-12 md:h-12 flex-shrink-0 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
-                        <i class="fa-solid fa-code text-zinc-300 group-hover:text-black transition-colors text-[8px] md:text-base"></i>
-                    </div>
-                    <span class="font-manrope uppercase tracking-widest text-[5px] md:text-sm text-zinc-300">Web Dev</span>
-                </div>
-                <div class="flex items-center gap-1 md:gap-4 group cursor-default">
-                    <div class="w-6 h-6 md:w-12 md:h-12 flex-shrink-0 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
-                        <i class="fa-solid fa-palette text-zinc-300 group-hover:text-black transition-colors text-[8px] md:text-base"></i>
-                    </div>
-                    <span class="font-manrope uppercase tracking-widest text-[5px] md:text-sm text-zinc-300">Web Design</span>
-                </div>
-                <div class="flex items-center gap-1 md:gap-4 group cursor-default">
-                    <div class="w-6 h-6 md:w-12 md:h-12 flex-shrink-0 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
-                        <i class="fa-solid fa-lightbulb text-zinc-300 group-hover:text-black transition-colors text-[8px] md:text-base"></i>
-                    </div>
-                    <span class="font-manrope uppercase tracking-widest text-[5px] md:text-sm text-zinc-300">Consulting</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 md:py-32 px-4 md:px-6" id="experience">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-8 md:mb-16 flex items-center gap-4" data-aos="fade-up">
-                <h2 class="font-notoSerif text-2xl md:text-5xl italic text-white mb-0">Professional Journey</h2>
-                <div class="w-12 md:w-24 h-[1px] bg-outline-variant/30"></div>
-            </div>
-            
-            <div class="flex flex-col gap-6 md:gap-10">
-                <div class="glass-pane p-4 md:p-10 rounded-xl flex flex-row justify-between items-center gap-4 border-l border-white/20 hover:border-white/50 transition-colors group" data-aos="zoom-in-up" data-aos-delay="100">
-                    <div class="w-1/3">
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest text-zinc-500 bg-white/5 px-2 md:px-3 py-0.5 md:py-1 rounded-full border border-white/10 inline-block w-fit whitespace-nowrap">Frontend Intern</span>
-                        <h3 class="font-notoSerif text-sm md:text-3xl text-white mt-2 md:mt-4 italic group-hover:scale-105 transition-transform origin-left">Edverb</h3>
-                    </div>
-                    <div class="w-2/3 text-right">
-                        <p class="font-manrope text-[7px] md:text-sm font-light text-zinc-400 mb-3 md:mb-6 leading-relaxed">
-                            Completed a front-end development internship at Edverb, where I was responsible for building and structuring complete website frontends. During my time, I successfully developed two fully responsive live websites for their platforms.
+                        <h4 class="font-notoSerif text-base md:text-3xl text-white italic mb-1 md:mb-2">Cricktraker</h4>
+                        <p
+                            class="font-manrope text-[7px] md:text-sm text-zinc-400 font-light mb-2 md:mb-4 leading-relaxed">
+                            A comprehensive cricket scoring and tournament tracking platform, similar to Cricheroes.
                         </p>
-                        <div class="flex flex-row justify-end gap-2 md:gap-4">
-                            <a href="https://edverb.in/" target="_blank" class="px-2 md:px-5 py-1 md:py-2.5 border border-white/10 rounded-full text-[5px] md:text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition flex items-center gap-1 md:gap-2">
-                                Edverb <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
-                            <a href="https://blackbanana.in/" target="_blank" class="px-2 md:px-5 py-1 md:py-2.5 border border-[#ffffff]/10 bg-black rounded-full text-[5px] md:text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition flex items-center gap-1 md:gap-2 shadow-lg">
-                                Banana <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
+                        <div class="flex flex-wrap gap-2 md:gap-4">
+                            <span
+                                class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">App
+                                Dev</span>
+                            <span
+                                class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Sports
+                                Tech</span>
+                        </div>
+                    </div>
+
+                    <div class="group" data-aos="fade-up-right" data-aos-delay="150">
+                        <div
+                            class="glass-pane rounded-xl md:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-video mb-3 md:mb-6 border border-white/5 relative bg-zinc-900 flex items-center justify-center p-2">
+                            <img alt="GeoBus - Real-time Bus Tracking System by Yug Rojivadiya"
+                                class="w-full h-full object-contain opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
+                                src="images/Geobus.jpg" loading="lazy" />
+                            <div class="absolute top-2 right-2 md:top-6 md:right-6">
+                                <span
+                                    class="bg-primary text-on-primary text-[5px] md:text-[10px] font-bold px-2 md:px-4 py-1 md:py-1.5 rounded-full uppercase tracking-widest shadow-lg">₹15,000
+                                    SSIP Grant</span>
+                            </div>
+                        </div>
+                        <h4 class="font-notoSerif text-base md:text-3xl text-white italic mb-1 md:mb-2">GeoBus</h4>
+                        <p
+                            class="font-manrope text-[7px] md:text-sm text-zinc-400 font-light mb-2 md:mb-4 leading-relaxed">
+                            An SSIP-supported project developed to track school buses and provide real-time GPS location
+                            updates for parents and schools.
+                        </p>
+                        <div class="flex gap-2 md:gap-4">
+                            <span
+                                class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Flutter
+                                Flow</span>
+                            <span
+                                class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Firebase</span>
+                        </div>
+                    </div>
+
+                    <div class="group md:mt-24" data-aos="fade-up-left" data-aos-delay="250">
+                        <div
+                            class="glass-pane rounded-xl md:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-video mb-3 md:mb-6 border border-white/5 relative bg-zinc-900 flex items-center justify-center p-2">
+                            <img alt="Clinic Appointment - Full-stack Booking System by Yug Rojivadiya"
+                                class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
+                                src="images/clinic.png" loading="lazy" />
+                        </div>
+                        <h4 class="font-notoSerif text-base md:text-3xl text-white italic mb-1 md:mb-2">Clinic
+                            Appointment System</h4>
+                        <p
+                            class="font-manrope text-[7px] md:text-sm text-zinc-400 font-light mb-2 md:mb-4 leading-relaxed">
+                            A full-stack platform for clinics to manage patient bookings, doctor listings, and real-time
+                            availability tracking.
+                        </p>
+                        <div class="flex flex-wrap gap-2 md:gap-4">
+                            <span
+                                class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Django</span>
+                            <span
+                                class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Tailwind
+                                CSS</span>
+                        </div>
+                        <a href="https://clinic-v9j2.onrender.com/" target="_blank"
+                            class="inline-flex mt-2 md:mt-6 items-center gap-1 md:gap-2 text-[5px] md:text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition group-hover:text-white">
+                            Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+
+                    <div class="group" data-aos="fade-up-right" data-aos-delay="150">
+                        <div
+                            class="glass-pane rounded-xl md:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-video mb-3 md:mb-6 border border-white/5 relative bg-zinc-900 flex items-center justify-center p-2">
+                            <img alt="La Nevi Camp - Responsive Camping Website by Yug Rojivadiya"
+                                class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
+                                src="images/nevicamp.png" loading="lazy" />
+                        </div>
+                        <h4 class="font-notoSerif text-base md:text-3xl text-white italic mb-1 md:mb-2">La Nevi Camp
+                            Website</h4>
+                        <p
+                            class="font-manrope text-[7px] md:text-sm text-zinc-400 font-light mb-2 md:mb-4 leading-relaxed">
+                            Designed and developed a fully responsive website for a camping client, showcasing services,
+                            activities, and booking details.
+                        </p>
+                        <div class="flex flex-wrap gap-2 md:gap-4">
+                            <span
+                                class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">HTML/CSS</span>
+                            <span
+                                class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Responsive</span>
+                        </div>
+                        <a href="https://www.nevicamps.com/" target="_blank"
+                            class="inline-flex mt-2 md:mt-6 items-center gap-1 md:gap-2 text-[5px] md:text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition group-hover:text-white">
+                            Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+
+                    <div class="group md:mt-24" data-aos="fade-up-left" data-aos-delay="250">
+                        <div
+                            class="glass-pane rounded-xl md:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-video mb-3 md:mb-6 border border-white/5 relative bg-zinc-900 flex items-center justify-center p-2">
+                            <img alt="AI Interview Tracker - AI Powered Performance Analysis by Yug Rojivadiya"
+                                class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
+                                src="images/interview-tracker.png" loading="lazy" />
+                        </div>
+                        <h4 class="font-notoSerif text-base md:text-3xl text-white italic mb-1 md:mb-2">AI Interview
+                            Tracker</h4>
+                        <p
+                            class="font-manrope text-[7px] md:text-sm text-zinc-400 font-light mb-2 md:mb-4 leading-relaxed">
+                            An intelligent platform that tracks mock interviews and provides AI-driven feedback on
+                            improvements and performance metrics.
+                        </p>
+                        <div class="flex flex-wrap gap-2 md:gap-4">
+                            <span
+                                class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">AI
+                                / ML</span>
+                            <span
+                                class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Python</span>
+                            <span
+                                class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Django</span>
                         </div>
                     </div>
                 </div>
-                
-                <div class="glass-pane p-4 md:p-10 rounded-xl flex flex-row justify-between items-center gap-4 border-l border-white/10 ml-2 md:ml-12 hover:border-white/50 transition-colors group" data-aos="zoom-in-up" data-aos-delay="200">
-                    <div class="w-1/3">
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest text-zinc-500 bg-white/5 px-2 md:px-3 py-0.5 md:py-1 rounded-full border border-white/10 inline-block w-fit whitespace-nowrap">Leadership</span>
-                        <h3 class="font-notoSerif text-sm md:text-3xl text-white mt-2 md:mt-4 italic group-hover:scale-105 transition-transform origin-left">VP, EBC Club</h3>
-                    </div>
-                    <div class="w-2/3 text-right flex justify-end">
-                        <ul class="font-manrope text-[7px] md:text-sm font-light text-zinc-400 list-disc list-inside text-right flex flex-col gap-1 md:gap-2 leading-relaxed">
-                            <li>Led event coordination for major university tech fests.</li>
-                            <li>Managed a team of 50+ students.</li>
-                            <li>Coordinated between faculty and students for smooth operations.</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="glass-pane p-4 md:p-10 rounded-xl flex flex-row justify-between items-center gap-4 border-l border-white/5 ml-4 md:ml-24 hover:border-white/50 transition-colors group" data-aos="zoom-in-up" data-aos-delay="300">
-                    <div class="w-1/3">
-                        <span class="text-[5px] md:text-[10px] uppercase tracking-widest text-zinc-500 bg-white/5 px-2 md:px-3 py-0.5 md:py-1 rounded-full border border-white/10 inline-block w-fit whitespace-nowrap">Client • Remote</span>
-                        <h3 class="font-notoSerif text-sm md:text-3xl text-white mt-2 md:mt-4 italic group-hover:scale-105 transition-transform origin-left">Freelance Dev</h3>
-                    </div>
-                    <div class="w-2/3 text-right flex justify-end">
-                        <ul class="font-manrope text-[7px] md:text-sm font-light text-zinc-400 list-disc list-inside text-right flex flex-col gap-1 md:gap-2 leading-relaxed">
-                            <li>Developed end-to-end websites from design to deployment.</li>
-                            <li>Built real-world business and management web projects.</li>
-                            <li>Managed client requirements, timelines, and quality delivery.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="py-16 md:py-32 px-4 md:px-6" id="work">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-8 md:mb-16 flex flex-row-reverse items-center gap-4 justify-start" data-aos="fade-left">
-                <h2 class="font-notoSerif text-2xl md:text-5xl italic text-white mb-0">Curated Projects & Grants</h2>
-                <div class="w-12 md:w-24 h-[1px] bg-outline-variant/30"></div>
             </div>
-            
-            <div class="grid grid-cols-2 gap-3 md:gap-12">
-                <div class="group" data-aos="fade-up-right" data-aos-delay="150">
-                    <div class="glass-pane rounded-xl md:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-video mb-3 md:mb-6 border border-white/5 relative bg-zinc-900 flex items-center justify-center p-2">
-                        <img alt="Grantpilot - SSIP Grant Winning Project by Yug Rojivadiya" class="w-full h-full object-contain opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000" src="images/Grantpilot.jpg" loading="lazy"/>
-                        <div class="absolute top-2 right-2 md:top-6 md:right-6">
-                            <span class="bg-primary text-on-primary text-[5px] md:text-[10px] font-bold px-2 md:px-4 py-1 md:py-1.5 rounded-full uppercase tracking-widest shadow-lg">₹30,000 SSIP Grant</span>
+        </section>
+
+        <section
+            class="py-16 md:py-32 px-4 md:px-6 bg-surface-container-lowest/50 backdrop-blur-sm border-y border-white/5 relative">
+            <div class="max-w-6xl mx-auto text-center">
+                <span
+                    class="material-symbols-outlined text-4xl md:text-6xl text-yellow-500 mb-4 md:mb-6 drop-shadow-[0_0_15px_rgba(234,179,8,0.5)] animate-float"
+                    data-icon="emoji_events">emoji_events</span>
+                <h2 class="font-notoSerif text-3xl md:text-5xl italic text-white mb-10 md:mb-16" data-aos="zoom-in"
+                    data-aos-duration="1200">Peak Milestones</h2>
+
+                <div class="grid grid-cols-2 gap-3 md:gap-8 items-stretch">
+
+                    <div class="glass-pane p-3 md:p-12 rounded-xl md:rounded-[2rem] border border-outline-variant/10 w-full hover:scale-[1.02] transition-all text-left flex flex-col md:flex-row md:items-center h-full gap-3 md:gap-8 justify-between relative overflow-hidden"
+                        data-aos="fade-up-right" data-aos-delay="250">
+                        <div class="relative z-10 md:w-3/5">
+                            <span
+                                class="text-yellow-500 text-[5px] md:text-[10px] font-bold tracking-widest uppercase bg-yellow-500/10 px-1.5 md:px-3 py-0.5 md:py-1 rounded-full border border-yellow-500/20 mb-1.5 md:mb-6 inline-block">1st
+                                Prize Winner</span>
+                            <h3
+                                class="font-notoSerif text-[10px] md:text-4xl italic text-white mb-1.5 md:mb-4 mt-0.5 md:mt-2">
+                                Website Building Competition</h3>
+                            <p
+                                class="font-manrope text-[6px] md:text-sm font-light text-zinc-400 mb-2.5 md:mb-8 leading-relaxed">
+                                Secured 1st position in the university-level website building competition by designing
+                                and developing a highly responsive and interactive web project under a strict time
+                                limit.</p>
+
+                            <p
+                                class="font-manrope text-[5px] md:text-sm font-bold text-zinc-300 uppercase tracking-widest bg-white/5 w-fit px-1.5 md:px-4 py-0.5 md:py-2 rounded-md md:rounded-lg border border-white/10 mb-2.5 md:mb-8">
+                                P P Savani University</p>
+                        </div>
+
+                        <div class="w-full md:w-2/5 relative z-10 bg-black/20 p-1.5 rounded-md md:rounded-xl">
+                            <img src="images/website-competition.jpeg"
+                                alt="Yug Rojivadiya Securing 1st Prize in Website Building Competition"
+                                class="w-full h-20 md:h-40 object-contain rounded-md md:rounded-xl transition-all duration-500 shadow-xl border border-white/10"
+                                loading="lazy">
                         </div>
                     </div>
-                    <h4 class="font-notoSerif text-base md:text-3xl text-white italic mb-1 md:mb-2">Grantpilot</h4>
-                    <p class="font-manrope text-[7px] md:text-sm text-zinc-400 font-light mb-2 md:mb-4 leading-relaxed">
-                        An SSIP-supported project developed to manage and track student innovation and grant-related workflows.
-                    </p>
-                    <div class="flex gap-2 md:gap-4">
-                        <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Django</span>
-                        <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Python</span>
-                    </div>
-                    <a href="https://iec.ppsu.ac.in/" target="_blank" class="inline-flex mt-2 md:mt-6 items-center gap-1 md:gap-2 text-[5px] md:text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition group-hover:text-white">
-                        Visit Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-                </div>
 
-                <div class="group md:mt-24" data-aos="fade-up-left" data-aos-delay="250">
-                    <div class="glass-pane rounded-xl md:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-video mb-3 md:mb-6 border border-white/5 relative bg-zinc-900 flex items-center justify-center p-2">
-                        <img alt="Cricktraker - Sports Scoring Platform by Yug Rojivadiya" class="w-full h-full object-contain opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000" src="images/cricktraker.jpeg" loading="lazy"/>
-                        <div class="absolute top-2 right-2 md:top-6 md:right-6">
-                            <span class="bg-primary text-on-primary text-[5px] md:text-[10px] font-bold px-2 md:px-4 py-1 md:py-1.5 rounded-full uppercase tracking-widest shadow-lg">₹20,000 SSIP Grant</span>
+                    <div class="glass-pane p-3 md:p-12 rounded-xl md:rounded-[2rem] border border-outline-variant/10 w-full hover:scale-[1.02] transition-all text-left flex flex-col h-full justify-between relative overflow-hidden"
+                        data-aos="fade-up-left" data-aos-delay="250">
+                        <div class="relative z-10">
+                            <span
+                                class="text-red-400 text-[5px] md:text-[10px] font-bold tracking-widest uppercase bg-red-400/10 px-1.5 md:px-3 py-0.5 md:py-1 rounded-full border border-red-400/20 mb-1.5 md:mb-6 inline-block">Top
+                                10 Achievement</span>
+                            <h3
+                                class="font-notoSerif text-[10px] md:text-4xl italic text-white mb-1.5 md:mb-4 mt-0.5 md:mt-2">
+                                Indux 5.0 National-level Hackathon</h3>
+                            <p
+                                class="font-manrope text-[6px] md:text-sm font-light text-zinc-400 mb-2.5 md:mb-8 leading-relaxed max-w-md">
+                                Secured a Top 10 position out of 165 teams, competing against top developers from across
+                                the country to solve complex problems under a tight deadline.</p>
+                        </div>
+
+                        <div
+                            class="grid grid-cols-2 gap-1.5 md:gap-4 mt-auto relative z-10 bg-black/20 p-1.5 rounded-md md:rounded-xl">
+                            <img src="images/indux5.0 hackathon1.jpg"
+                                alt="Yug Rojivadiya at Indux 5.0 National-level Hackathon"
+                                class="w-full h-20 md:h-40 object-contain rounded-md md:rounded-xl transition-all duration-500 shadow-xl border border-white/10"
+                                loading="lazy">
+                            <img src="images/indux5.0 hackathon2.png"
+                                alt="Yug Rojivadiya Top 10 Achievement in National Hackathon"
+                                class="w-full h-20 md:h-40 object-top object-contain rounded-md md:rounded-xl  transition-all duration-500 shadow-xl border border-white/10"
+                                loading="lazy">
                         </div>
                     </div>
-                    <h4 class="font-notoSerif text-base md:text-3xl text-white italic mb-1 md:mb-2">Cricktraker</h4>
-                    <p class="font-manrope text-[7px] md:text-sm text-zinc-400 font-light mb-2 md:mb-4 leading-relaxed">
-                        A comprehensive cricket scoring and tournament tracking platform, similar to Cricheroes.
-                    </p>
-                    <div class="flex flex-wrap gap-2 md:gap-4">
-                        <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">App Dev</span>
-                        <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Sports Tech</span>
+                </div>
+
+            </div>
+        </section>
+
+        <footer
+            class="pt-16 md:pt-32 pb-8 md:pb-12 px-4 md:px-6 bg-transparent text-zinc-400 font-manrope border-t border-white/10"
+            id="contact">
+            <div class="max-w-6xl mx-auto mb-12 md:mb-24 grid grid-cols-2 gap-4 md:gap-12" data-aos="fade-up">
+                <div>
+                    <h2 class="font-notoSerif text-2xl md:text-6xl text-white italic mb-4 md:mb-10">Let's Connect</h2>
+                    <div class="space-y-3 md:space-y-6">
+                        <a class="flex items-center gap-2 md:gap-4 text-[7px] md:text-xl hover:text-white transition-colors w-fit group font-light"
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=work.yugrojivadiya@gmail.com&su=Portfolio%20Inquiry"
+                            target="_blank">
+                            <div
+                                class="w-6 h-6 md:w-12 md:h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-colors bg-white/5">
+                                <span class="material-symbols-outlined text-white text-[10px] md:text-lg"
+                                    data-icon="mail">mail</span>
+                            </div>
+                            work.yugrojivadiya@gmail.com
+                        </a>
+
+                        <a class="flex items-center gap-2 md:gap-4 text-[7px] md:text-xl hover:text-white transition-colors w-fit group font-light"
+                            href="https://wa.me/+919106577265" target="_blank">
+                            <div
+                                class="w-6 h-6 md:w-12 md:h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-colors bg-white/5">
+                                <i class="fa-brands fa-whatsapp text-white text-[10px] md:text-lg"></i>
+                            </div>
+                            +91 91065 77265
+                        </a>
                     </div>
                 </div>
 
-                <div class="group" data-aos="fade-up-right" data-aos-delay="150">
-                    <div class="glass-pane rounded-xl md:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-video mb-3 md:mb-6 border border-white/5 relative bg-zinc-900 flex items-center justify-center p-2">
-                        <img alt="GeoBus - Real-time Bus Tracking System by Yug Rojivadiya" class="w-full h-full object-contain opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000" src="images/Geobus.jpg" loading="lazy"/>
-                        <div class="absolute top-2 right-2 md:top-6 md:right-6">
-                            <span class="bg-primary text-on-primary text-[5px] md:text-[10px] font-bold px-2 md:px-4 py-1 md:py-1.5 rounded-full uppercase tracking-widest shadow-lg">₹15,000 SSIP Grant</span>
-                        </div>
-                    </div>
-                    <h4 class="font-notoSerif text-base md:text-3xl text-white italic mb-1 md:mb-2">GeoBus</h4>
-                    <p class="font-manrope text-[7px] md:text-sm text-zinc-400 font-light mb-2 md:mb-4 leading-relaxed">
-                        An SSIP-supported project developed to track school buses and provide real-time GPS location updates for parents and schools.
-                    </p>
-                    <div class="flex gap-2 md:gap-4">
-                        <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Flutter Flow</span>
-                        <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Firebase</span>
-                    </div>
-                </div>
-
-                <div class="group md:mt-24" data-aos="fade-up-left" data-aos-delay="250">
-                    <div class="glass-pane rounded-xl md:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-video mb-3 md:mb-6 border border-white/5 relative bg-zinc-900 flex items-center justify-center p-2">
-                        <img alt="Clinic Appointment - Full-stack Booking System by Yug Rojivadiya" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000" src="images/clinic.png" loading="lazy"/>
-                    </div>
-                    <h4 class="font-notoSerif text-base md:text-3xl text-white italic mb-1 md:mb-2">Clinic Appointment System</h4>
-                    <p class="font-manrope text-[7px] md:text-sm text-zinc-400 font-light mb-2 md:mb-4 leading-relaxed">
-                        A full-stack platform for clinics to manage patient bookings, doctor listings, and real-time availability tracking.
-                    </p>
-                    <div class="flex flex-wrap gap-2 md:gap-4">
-                        <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Django</span>
-                        <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Tailwind CSS</span>
-                    </div>
-                    <a href="https://clinic-v9j2.onrender.com/" target="_blank" class="inline-flex mt-2 md:mt-6 items-center gap-1 md:gap-2 text-[5px] md:text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition group-hover:text-white">
-                        Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-                </div>
-
-                <div class="group" data-aos="fade-up-right" data-aos-delay="150">
-                    <div class="glass-pane rounded-xl md:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-video mb-3 md:mb-6 border border-white/5 relative bg-zinc-900 flex items-center justify-center p-2">
-                        <img alt="La Nevi Camp - Responsive Camping Website by Yug Rojivadiya" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000" src="images/nevicamp.png" loading="lazy"/>
-                    </div>
-                    <h4 class="font-notoSerif text-base md:text-3xl text-white italic mb-1 md:mb-2">La Nevi Camp Website</h4>
-                    <p class="font-manrope text-[7px] md:text-sm text-zinc-400 font-light mb-2 md:mb-4 leading-relaxed">
-                        Designed and developed a fully responsive website for a camping client, showcasing services, activities, and booking details.
-                    </p>
-                    <div class="flex flex-wrap gap-2 md:gap-4">
-                        <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">HTML/CSS</span>
-                        <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Responsive</span>
-                    </div>
-                    <a href="https://www.nevicamps.com/" target="_blank" class="inline-flex mt-2 md:mt-6 items-center gap-1 md:gap-2 text-[5px] md:text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition group-hover:text-white">
-                        Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-                </div>
-
-                <div class="group md:mt-24" data-aos="fade-up-left" data-aos-delay="250">
-                    <div class="glass-pane rounded-xl md:rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-video mb-3 md:mb-6 border border-white/5 relative bg-zinc-900 flex items-center justify-center p-2">
-                        <img alt="AI Interview Tracker - AI Powered Performance Analysis by Yug Rojivadiya" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000" src="images/interview-tracker.png" loading="lazy"/>
-                    </div>
-                    <h4 class="font-notoSerif text-base md:text-3xl text-white italic mb-1 md:mb-2">AI Interview Tracker</h4>
-                    <p class="font-manrope text-[7px] md:text-sm text-zinc-400 font-light mb-2 md:mb-4 leading-relaxed">
-                        An intelligent platform that tracks mock interviews and provides AI-driven feedback on improvements and performance metrics.
-                    </p>
-                    <div class="flex flex-wrap gap-2 md:gap-4">
-                        <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">AI / ML</span>
-                        <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Python</span>
-                        <span class="text-[5px] md:text-[10px] px-1 md:px-2 py-0.5 md:py-1 border border-white/10 rounded-md text-zinc-400 uppercase tracking-widest bg-white/5">Django</span>
+                <div class="flex flex-col justify-end items-end gap-3 md:gap-6 border-l border-white/10 pl-4 md:pl-12">
+                    <p class="font-notoSerif text-xs md:text-2xl italic text-white mb-1 md:mb-2">Find me on socials.</p>
+                    <div class="flex flex-col md:flex-row justify-end gap-2 md:gap-4">
+                        <a class="glass-pane px-3 md:px-8 py-1.5 md:py-3 rounded-full text-[6px] md:text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all flex items-center gap-1 md:gap-2"
+                            href="https://www.linkedin.com/in/yug-rojivadiya-115bb435a/" target="_blank">
+                            <i class="fa-brands fa-linkedin text-[10px] md:text-lg"></i> LinkedIn
+                        </a>
+                        <a class="glass-pane px-3 md:px-8 py-1.5 md:py-3 rounded-full text-[6px] md:text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all flex items-center gap-1 md:gap-2"
+                            href="https://www.instagram.com/yug.rojivadiya/" target="_blank">
+                            <i class="fa-brands fa-instagram text-[10px] md:text-lg"></i> Instagram
+                        </a>
+                        <a class="glass-pane px-3 md:px-8 py-1.5 md:py-3 rounded-full text-[6px] md:text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all flex items-center gap-1 md:gap-2"
+                            href="https://github.com/YugPatel11" target="_blank">
+                            <i class="fa-brands fa-github text-[10px] md:text-lg"></i> Github
+                        </a>
                     </div>
                 </div>
             </div>
 
-        </div>
-    </section>
+            <div
+                class="max-w-6xl mx-auto flex flex-row justify-between items-center w-full pt-6 md:pt-12 text-[6px] md:text-[10px] tracking-widest uppercase gap-4 md:gap-8 text-left">
+                <div class="flex flex-row items-center gap-4 md:gap-8">
+                    <p>© 2026 Yug Rojivadiya</p>
 
-    <section class="py-16 md:py-32 px-4 md:px-6 bg-surface-container-lowest/50 backdrop-blur-sm border-y border-white/5 relative">
-        <div class="max-w-6xl mx-auto text-center" >
-            <span class="material-symbols-outlined text-4xl md:text-6xl text-yellow-500 mb-4 md:mb-6 drop-shadow-[0_0_15px_rgba(234,179,8,0.5)] animate-float" data-icon="emoji_events">emoji_events</span>
-            <h2 class="font-notoSerif text-3xl md:text-5xl italic text-white mb-10 md:mb-16" data-aos="zoom-in" data-aos-duration="1200">Peak Milestones</h2>
-            
-            <div class="grid grid-cols-2 gap-3 md:gap-8 items-stretch">
-                 
-                 <div class="glass-pane p-3 md:p-12 rounded-xl md:rounded-[2rem] border border-outline-variant/10 w-full hover:scale-[1.02] transition-all text-left flex flex-col md:flex-row md:items-center h-full gap-3 md:gap-8 justify-between relative overflow-hidden" data-aos="fade-up-right" data-aos-delay="250">
-                     <div class="relative z-10 md:w-3/5">
-                         <span class="text-yellow-500 text-[5px] md:text-[10px] font-bold tracking-widest uppercase bg-yellow-500/10 px-1.5 md:px-3 py-0.5 md:py-1 rounded-full border border-yellow-500/20 mb-1.5 md:mb-6 inline-block">1st Prize Winner</span>
-                         <h3 class="font-notoSerif text-[10px] md:text-4xl italic text-white mb-1.5 md:mb-4 mt-0.5 md:mt-2">Website Building Competition</h3>
-                         <p class="font-manrope text-[6px] md:text-sm font-light text-zinc-400 mb-2.5 md:mb-8 leading-relaxed">Secured 1st position in the university-level website building competition by designing and developing a highly responsive and interactive web project under a strict time limit.</p>
-                         
-                         <p class="font-manrope text-[5px] md:text-sm font-bold text-zinc-300 uppercase tracking-widest bg-white/5 w-fit px-1.5 md:px-4 py-0.5 md:py-2 rounded-md md:rounded-lg border border-white/10 mb-2.5 md:mb-8">P P Savani University</p>
-                     </div>
-                     
-                     <div class="w-full md:w-2/5 relative z-10 bg-black/20 p-1.5 rounded-md md:rounded-xl">
-                          <img src="images/website-competition.jpeg" alt="Yug Rojivadiya Securing 1st Prize in Website Building Competition" class="w-full h-20 md:h-40 object-contain rounded-md md:rounded-xl transition-all duration-500 shadow-xl border border-white/10" loading="lazy">
-                     </div>
-                 </div>
-                 
-                 <div class="glass-pane p-3 md:p-12 rounded-xl md:rounded-[2rem] border border-outline-variant/10 w-full hover:scale-[1.02] transition-all text-left flex flex-col h-full justify-between relative overflow-hidden" data-aos="fade-up-left" data-aos-delay="250">
-                     <div class="relative z-10">
-                         <span class="text-red-400 text-[5px] md:text-[10px] font-bold tracking-widest uppercase bg-red-400/10 px-1.5 md:px-3 py-0.5 md:py-1 rounded-full border border-red-400/20 mb-1.5 md:mb-6 inline-block">Top 10 Achievement</span>
-                         <h3 class="font-notoSerif text-[10px] md:text-4xl italic text-white mb-1.5 md:mb-4 mt-0.5 md:mt-2">Indux 5.0 National-level Hackathon</h3>
-                         <p class="font-manrope text-[6px] md:text-sm font-light text-zinc-400 mb-2.5 md:mb-8 leading-relaxed max-w-md">Secured a Top 10 position out of 165 teams, competing against top developers from across the country to solve complex problems under a tight deadline.</p>
-                     </div>
-                     
-                     <div class="grid grid-cols-2 gap-1.5 md:gap-4 mt-auto relative z-10 bg-black/20 p-1.5 rounded-md md:rounded-xl">
-                          <img src="images/indux5.0 hackathon1.jpg" alt="Yug Rojivadiya at Indux 5.0 National-level Hackathon" class="w-full h-20 md:h-40 object-contain rounded-md md:rounded-xl transition-all duration-500 shadow-xl border border-white/10" loading="lazy">
-                          <img src="images/indux5.0 hackathon2.png" alt="Yug Rojivadiya Top 10 Achievement in National Hackathon" class="w-full h-20 md:h-40 object-top object-contain rounded-md md:rounded-xl  transition-all duration-500 shadow-xl border border-white/10" loading="lazy">
-                     </div>
-                 </div>
-            </div>
-            
-        </div>
-    </section>
+                </div>
 
-    <footer class="pt-16 md:pt-32 pb-8 md:pb-12 px-4 md:px-6 bg-transparent text-zinc-400 font-manrope border-t border-white/10" id="contact">
-        <div class="max-w-6xl mx-auto mb-12 md:mb-24 grid grid-cols-2 gap-4 md:gap-12" data-aos="fade-up">
-            <div>
-                <h2 class="font-notoSerif text-2xl md:text-6xl text-white italic mb-4 md:mb-10">Let's Connect</h2>
-                <div class="space-y-3 md:space-y-6">
-                    <a class="flex items-center gap-2 md:gap-4 text-[7px] md:text-xl hover:text-white transition-colors w-fit group font-light" href="https://mail.google.com/mail/?view=cm&fs=1&to=work.yugrojivadiya@gmail.com&su=Portfolio%20Inquiry" target="_blank">
-                        <div class="w-6 h-6 md:w-12 md:h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-colors bg-white/5">
-                            <span class="material-symbols-outlined text-white text-[10px] md:text-lg" data-icon="mail">mail</span>
-                        </div>
-                        work.yugrojivadiya@gmail.com
-                    </a>
-                    
-                    <a class="flex items-center gap-2 md:gap-4 text-[7px] md:text-xl hover:text-white transition-colors w-fit group font-light" href="https://wa.me/+919106577265" target="_blank">
-                        <div class="w-6 h-6 md:w-12 md:h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-colors bg-white/5">
-                            <i class="fa-brands fa-whatsapp text-white text-[10px] md:text-lg"></i>
-                        </div>
-                        +91 91065 77265
-                    </a>
+                <div class="flex gap-4 md:gap-8 items-center">
+                    <span class="text-zinc-500 flex items-center gap-1 md:gap-2 hidden sm:flex">
+                        Crafted with Code & Creativity
+                    </span>
+                    <a class="text-white font-bold hover:scale-105 transition-all cursor-pointer bg-white/10 px-3 md:px-6 py-1 md:py-2.5 rounded-full"
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Back to Top</a>
                 </div>
             </div>
-            
-            <div class="flex flex-col justify-end items-end gap-3 md:gap-6 border-l border-white/10 pl-4 md:pl-12">
-                <p class="font-notoSerif text-xs md:text-2xl italic text-white mb-1 md:mb-2">Find me on socials.</p>
-                <div class="flex flex-col md:flex-row justify-end gap-2 md:gap-4">
-                    <a class="glass-pane px-3 md:px-8 py-1.5 md:py-3 rounded-full text-[6px] md:text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all flex items-center gap-1 md:gap-2" href="https://www.linkedin.com/in/yug-rojivadiya-115bb435a/" target="_blank">
-                       <i class="fa-brands fa-linkedin text-[10px] md:text-lg"></i> LinkedIn
-                    </a>
-                    <a class="glass-pane px-3 md:px-8 py-1.5 md:py-3 rounded-full text-[6px] md:text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all flex items-center gap-1 md:gap-2" href="https://www.instagram.com/yug.rojivadiya/" target="_blank">
-                       <i class="fa-brands fa-instagram text-[10px] md:text-lg"></i> Instagram
-                    </a>
-                    <a class="glass-pane px-3 md:px-8 py-1.5 md:py-3 rounded-full text-[6px] md:text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all flex items-center gap-1 md:gap-2" href="https://github.com/YugPatel11" target="_blank">
-                       <i class="fa-brands fa-github text-[10px] md:text-lg"></i> Github
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="max-w-6xl mx-auto flex flex-row justify-between items-center w-full pt-6 md:pt-12 text-[6px] md:text-[10px] tracking-widest uppercase gap-4 md:gap-8 text-left">
-            <div class="flex flex-row items-center gap-4 md:gap-8">
-                <p>© 2026 Yug Rojivadiya</p>
-                
-            </div>
-            
-            <div class="flex gap-4 md:gap-8 items-center">
-                <span class="text-zinc-500 flex items-center gap-1 md:gap-2 hidden sm:flex">
-                    Crafted with Code & Creativity
-                </span>
-                <a class="text-white font-bold hover:scale-105 transition-all cursor-pointer bg-white/10 px-3 md:px-6 py-1 md:py-2.5 rounded-full" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Back to Top</a>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
-</main>
+    </main>
 
-<div class="fixed inset-0 pointer-events-none z-[60] opacity-[0.03]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrlm_pSDZq8Q1MvXhleBMyFXs_oXyOk0FWb_1uavK2kXVhjwg6r8hgLw49DH21tmkW2FDhWPHRWECqqeUO3TKE_tS70KlIOFxn21gd4vEF2trAu7rzS-vQAj3DYpI7RC6zB0zW-u_bI2Fmv0x51E37YYEelnx0ObtXTYZDlGSh5df2ILeKB5raTERDLD9W8urBWjtkepFEfh3g4-hxkv1RF7QpYl35Y94nngFfZHZqOg3pLdtxoLG9A8MUFdblYScN60zvYnpKAhs');"></div>
+    <div class="fixed inset-0 pointer-events-none z-[60] opacity-[0.03]"
+        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrlm_pSDZq8Q1MvXhleBMyFXs_oXyOk0FWb_1uavK2kXVhjwg6r8hgLw49DH21tmkW2FDhWPHRWECqqeUO3TKE_tS70KlIOFxn21gd4vEF2trAu7rzS-vQAj3DYpI7RC6zB0zW-u_bI2Fmv0x51E37YYEelnx0ObtXTYZDlGSh5df2ILeKB5raTERDLD9W8urBWjtkepFEfh3g4-hxkv1RF7QpYl35Y94nngFfZHZqOg3pLdtxoLG9A8MUFdblYScN60zvYnpKAhs');">
+    </div>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    // Preloader Toggle
-    window.addEventListener('load', () => {
-        const preloader = document.getElementById('preloader');
-        setTimeout(() => {
-            preloader.classList.add('preloader-hidden');
-            document.body.style.overflow = 'auto';
-            AOS.init({ 
-                once: false, 
-                duration: 1000, 
-                offset: 30,
-                easing: 'ease-out-cubic'
-            });
-        }, 1500);
-    });
-
-    // Mobile Menu Toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu-container');
-    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-
-    menuToggle.addEventListener('click', () => {
-        const isOpen = mobileMenu.classList.toggle('open');
-        menuToggle.classList.toggle('active');
-    });
-
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-            menuToggle.classList.remove('active');
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Preloader Toggle
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.classList.add('preloader-hidden');
+                document.body.style.overflow = 'auto';
+                AOS.init({
+                    once: false,
+                    duration: 1000,
+                    offset: 30,
+                    easing: 'ease-out-cubic'
+                });
+            }, 1500);
         });
-    });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu-container');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            menuToggle.classList.toggle('active');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                menuToggle.classList.remove('active');
+            });
+        });
 
 
-    document.body.style.overflow = 'hidden';
-</script>
+        document.body.style.overflow = 'hidden';
+    </script>
 
 </body>
+
 </html>
